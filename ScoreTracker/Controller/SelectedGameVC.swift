@@ -8,8 +8,11 @@
 
 import UIKit
 
-class MainScreenVC: UIViewController {
+class SelectedGameVC: UIViewController {
     
+    //Mark:- Variables, Constants & Outlets
+    
+    // Outlets
     @IBOutlet weak var currentChampionLabel: UILabel!
     @IBOutlet weak var totalGamesPlayedLabel: UILabel!
     @IBOutlet weak var daleScoreLabel: UILabel!
@@ -21,6 +24,8 @@ class MainScreenVC: UIViewController {
     @IBOutlet var drawLabel: UILabel!
     @IBOutlet var drawPercentageLabel: UILabel!
     
+    
+    // Variables
     var dalesScore = 0.0
     var lewisScore = 0.0
     var totalGamesPlayed = 0.0
@@ -32,12 +37,11 @@ class MainScreenVC: UIViewController {
     var drawPercentage = 0.0
     
     
+    //MARK:- Views loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         let parallaxing = ParallaxEffect()
         parallaxing.setUpParallax(background: backgroundOutlet)
-        let save = SaveInfo(daleScore: dalesScore, lewisScore: lewisScore, totalGamesPlayed: totalGamesPlayed, currentChampion: currentChampion, daleWinPercentage: daleWinPercentage, lewisWinPercentage: lewisWinPercentage, drawnGames: draw, drawPercentage: drawPercentage, lastWinner: lastWinner).getScores()
-        (dalesScore, lewisScore, totalGamesPlayed, currentChampion, daleWinPercentage, lewisWinPercentage, draw, drawPercentage, lastWinner) = save
         
     }
     
@@ -47,6 +51,7 @@ class MainScreenVC: UIViewController {
         
     }
     
+    //MARK:- Set up game labels and buttons functions
     func setLabels() {
         daleWinnngPercentageLabel.text = "Winning Percentage: \n\(Int(daleWinPercentage))%"
         lewisWinningPercentageLabel.text = "Winning percentage: \n\(Int(lewisWinPercentage))%"
@@ -72,6 +77,8 @@ class MainScreenVC: UIViewController {
         lastWinner = DefaultValues().lastWinner
     }
     
+    
+    //MARK:- IBActions/Button pressed
     @IBAction func addNewVictoryButton(_ sender: UIButton) {
         performSegue(withIdentifier: "whoWonSegue", sender: self)
         

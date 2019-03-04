@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DF0D58CA099075AA6F3B13B /* Pods_ScoreTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EA189B22E0CCBAA4B3EF94 /* Pods_ScoreTracker.framework */; };
 		F66649B22205B6250003D116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649B12205B6250003D116 /* AppDelegate.swift */; };
-		F66649B42205B6250003D116 /* MainScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649B32205B6250003D116 /* MainScreenVC.swift */; };
+		F66649B42205B6250003D116 /* SelectedGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649B32205B6250003D116 /* SelectedGameVC.swift */; };
 		F66649B72205B6250003D116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66649B52205B6250003D116 /* Main.storyboard */; };
 		F66649BC2205B6260003D116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66649BA2205B6260003D116 /* LaunchScreen.storyboard */; };
 		F66649C62205BB6C0003D116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66649C52205BB6C0003D116 /* Assets.xcassets */; };
 		F66649C82205C3B90003D116 /* WhoWonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649C72205C3B90003D116 /* WhoWonVC.swift */; };
+		F66CC08B222D401100714C72 /* WelcomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC08A222D401100714C72 /* WelcomeScreenVC.swift */; };
+		F66CC08D222D401E00714C72 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC08C222D401E00714C72 /* LogInVC.swift */; };
+		F66CC08F222D402E00714C72 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC08E222D402E00714C72 /* RegisterVC.swift */; };
+		F66CC093222D410A00714C72 /* SelectMatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC092222D410A00714C72 /* SelectMatchVC.swift */; };
+		F66CC095222D416100714C72 /* ChooseGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC094222D416100714C72 /* ChooseGameVC.swift */; };
+		F685A5AD222D6FD9000A294C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F685A5AC222D6FD9000A294C /* Constants.swift */; };
 		F68933A5220C672700858BB1 /* CustomLabelFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68933A4220C672700858BB1 /* CustomLabelFile.swift */; };
 		F68933A7220C677C00858BB1 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68933A6220C677C00858BB1 /* CustomButtonView.swift */; };
+		F693458A222D540B008820B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6934589222D540A008820B3 /* GoogleService-Info.plist */; };
 		F6987E85220DF04F0062CBEE /* ParallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */; };
 		F6CF9B2F220CA81A00774FED /* PercentageCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */; };
 		F6DAAFAD22105D1800F1D86C /* SaveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DAAFAC22105D1800F1D86C /* SaveInfo.swift */; };
@@ -22,20 +30,30 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6EA189B22E0CCBAA4B3EF94 /* Pods_ScoreTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoreTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D321977FFA599A5A0C88608F /* Pods-ScoreTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreTracker.debug.xcconfig"; path = "Target Support Files/Pods-ScoreTracker/Pods-ScoreTracker.debug.xcconfig"; sourceTree = "<group>"; };
 		F66649AE2205B6250003D116 /* ScoreTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66649B12205B6250003D116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F66649B32205B6250003D116 /* MainScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenVC.swift; sourceTree = "<group>"; };
+		F66649B32205B6250003D116 /* SelectedGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedGameVC.swift; sourceTree = "<group>"; };
 		F66649B62205B6250003D116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F66649BB2205B6260003D116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F66649BD2205B6260003D116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66649C52205BB6C0003D116 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F66649C72205C3B90003D116 /* WhoWonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoWonVC.swift; sourceTree = "<group>"; };
+		F66CC08A222D401100714C72 /* WelcomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVC.swift; sourceTree = "<group>"; };
+		F66CC08C222D401E00714C72 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
+		F66CC08E222D402E00714C72 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		F66CC092222D410A00714C72 /* SelectMatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMatchVC.swift; sourceTree = "<group>"; };
+		F66CC094222D416100714C72 /* ChooseGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameVC.swift; sourceTree = "<group>"; };
+		F685A5AC222D6FD9000A294C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F68933A4220C672700858BB1 /* CustomLabelFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelFile.swift; sourceTree = "<group>"; };
 		F68933A6220C677C00858BB1 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
+		F6934589222D540A008820B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxEffect.swift; sourceTree = "<group>"; };
 		F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCalc.swift; sourceTree = "<group>"; };
 		F6DAAFAC22105D1800F1D86C /* SaveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInfo.swift; sourceTree = "<group>"; };
 		F6DAAFAE221068FC00F1D86C /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
+		F93F831D4AE02B5279DB878C /* Pods-ScoreTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreTracker.release.xcconfig"; path = "Target Support Files/Pods-ScoreTracker/Pods-ScoreTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +61,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF0D58CA099075AA6F3B13B /* Pods_ScoreTracker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65F617850D9B671F8C604558 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6EA189B22E0CCBAA4B3EF94 /* Pods_ScoreTracker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C51E57AA2B520735A036CFD6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D321977FFA599A5A0C88608F /* Pods-ScoreTracker.debug.xcconfig */,
+				F93F831D4AE02B5279DB878C /* Pods-ScoreTracker.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F66649A52205B6250003D116 = {
 			isa = PBXGroup;
 			children = (
 				F66649B02205B6250003D116 /* ScoreTracker */,
 				F66649AF2205B6250003D116 /* Products */,
+				C51E57AA2B520735A036CFD6 /* Pods */,
+				65F617850D9B671F8C604558 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,24 +106,33 @@
 		F66649B02205B6250003D116 /* ScoreTracker */ = {
 			isa = PBXGroup;
 			children = (
+				F66649B12205B6250003D116 /* AppDelegate.swift */,
 				F68933A1220C65F700858BB1 /* Model */,
 				F689339F220C65DD00858BB1 /* View */,
 				F68933A0220C65EB00858BB1 /* Controller */,
-				F66649B52205B6250003D116 /* Main.storyboard */,
-				F66649BA2205B6260003D116 /* LaunchScreen.storyboard */,
-				F66649BD2205B6260003D116 /* Info.plist */,
-				F66649B12205B6250003D116 /* AppDelegate.swift */,
-				F66649C52205BB6C0003D116 /* Assets.xcassets */,
+				F6934586222D52EE008820B3 /* Supporting Files */,
+				F685A5AB222D6FA1000A294C /* Utilities */,
 			);
 			path = ScoreTracker;
+			sourceTree = "<group>";
+		};
+		F685A5AB222D6FA1000A294C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F685A5AC222D6FD9000A294C /* Constants.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		F689339F220C65DD00858BB1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F66649B52205B6250003D116 /* Main.storyboard */,
 				F68933A4220C672700858BB1 /* CustomLabelFile.swift */,
 				F68933A6220C677C00858BB1 /* CustomButtonView.swift */,
 				F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */,
+				F66649BA2205B6260003D116 /* LaunchScreen.storyboard */,
+				F66649C52205BB6C0003D116 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,7 +140,12 @@
 		F68933A0220C65EB00858BB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F66649B32205B6250003D116 /* MainScreenVC.swift */,
+				F66CC08A222D401100714C72 /* WelcomeScreenVC.swift */,
+				F66CC08E222D402E00714C72 /* RegisterVC.swift */,
+				F66CC08C222D401E00714C72 /* LogInVC.swift */,
+				F66CC094222D416100714C72 /* ChooseGameVC.swift */,
+				F66649B32205B6250003D116 /* SelectedGameVC.swift */,
+				F66CC092222D410A00714C72 /* SelectMatchVC.swift */,
 				F66649C72205C3B90003D116 /* WhoWonVC.swift */,
 			);
 			path = Controller;
@@ -109,6 +161,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		F6934586222D52EE008820B3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F66649BD2205B6260003D116 /* Info.plist */,
+				F6934589222D540A008820B3 /* GoogleService-Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -116,9 +177,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F66649C02205B6260003D116 /* Build configuration list for PBXNativeTarget "ScoreTracker" */;
 			buildPhases = (
+				D16456F7D14000D732495B91 /* [CP] Check Pods Manifest.lock */,
 				F66649AA2205B6250003D116 /* Sources */,
 				F66649AB2205B6250003D116 /* Frameworks */,
 				F66649AC2205B6250003D116 /* Resources */,
+				0C667A2F2901D4DC7AC1CFC4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F66649BC2205B6260003D116 /* LaunchScreen.storyboard in Resources */,
+				F693458A222D540B008820B3 /* GoogleService-Info.plist in Resources */,
 				F66649C62205BB6C0003D116 /* Assets.xcassets in Resources */,
 				F66649B72205B6250003D116 /* Main.storyboard in Resources */,
 			);
@@ -175,19 +239,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C667A2F2901D4DC7AC1CFC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScoreTracker/Pods-ScoreTracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScoreTracker/Pods-ScoreTracker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D16456F7D14000D732495B91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScoreTracker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F66649AA2205B6250003D116 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F6CF9B2F220CA81A00774FED /* PercentageCalc.swift in Sources */,
+				F66CC08F222D402E00714C72 /* RegisterVC.swift in Sources */,
 				F68933A7220C677C00858BB1 /* CustomButtonView.swift in Sources */,
-				F66649B42205B6250003D116 /* MainScreenVC.swift in Sources */,
+				F66649B42205B6250003D116 /* SelectedGameVC.swift in Sources */,
 				F66649B22205B6250003D116 /* AppDelegate.swift in Sources */,
+				F685A5AD222D6FD9000A294C /* Constants.swift in Sources */,
 				F6DAAFAF221068FC00F1D86C /* DefaultValues.swift in Sources */,
 				F6DAAFAD22105D1800F1D86C /* SaveInfo.swift in Sources */,
+				F66CC08D222D401E00714C72 /* LogInVC.swift in Sources */,
 				F6987E85220DF04F0062CBEE /* ParallaxEffect.swift in Sources */,
+				F66CC095222D416100714C72 /* ChooseGameVC.swift in Sources */,
+				F66CC08B222D401100714C72 /* WelcomeScreenVC.swift in Sources */,
 				F66649C82205C3B90003D116 /* WhoWonVC.swift in Sources */,
+				F66CC093222D410A00714C72 /* SelectMatchVC.swift in Sources */,
 				F68933A5220C672700858BB1 /* CustomLabelFile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,16 +461,17 @@
 		};
 		F66649C12205B6260003D116 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D321977FFA599A5A0C88608F /* Pods-ScoreTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4G8276757U;
-				INFOPLIST_FILE = "$(SRCROOT)/ScoreTracker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ScoreTracker/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LewisCrennell.DaleAndLewisChessTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LewisCrennell.ScoreTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -350,16 +480,17 @@
 		};
 		F66649C22205B6260003D116 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F93F831D4AE02B5279DB878C /* Pods-ScoreTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4G8276757U;
-				INFOPLIST_FILE = "$(SRCROOT)/ScoreTracker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ScoreTracker/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LewisCrennell.DaleAndLewisChessTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LewisCrennell.ScoreTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

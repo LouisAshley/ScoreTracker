@@ -11,9 +11,16 @@ import UIKit
 
 class WhoWonVC: UIViewController {
     
+    //MARK:- Variables, Constants & Outlets
+    //Outlets
+    @IBOutlet weak var backgroundImageOutlet: UIImageView!
+    
+    // Variables
     var buttonPressedTag: Int = 0
     
-    @IBOutlet weak var backgroundImageOutlet: UIImageView!
+    // Constants
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +28,10 @@ class WhoWonVC: UIViewController {
         parallaxingEffect.setUpParallax(background: backgroundImageOutlet)
     }
     
+    
+    //MARK:- Segueways functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! MainScreenVC
+        let destinationVC = segue.destination as! SelectedGameVC
         switch buttonPressedTag {
         case 2:
             destinationVC.lastWinner = "Dale"
@@ -30,14 +39,12 @@ class WhoWonVC: UIViewController {
             destinationVC.dalesScore += 1
             daleWonButtonDress(destination: destinationVC)
             drawButtonPressed(destination: destinationVC)
-            saveGameData(destination: destinationVC)
         case 3:
             destinationVC.lastWinner = "Lewis"
             destinationVC.totalGamesPlayed += 1
             destinationVC.lewisScore += 1
             lewisWonButtonPressed(destination: destinationVC)
             drawButtonPressed(destination: destinationVC)
-            saveGameData(destination: destinationVC)
         case 4:
             destinationVC.lastWinner = "Draw"
             destinationVC.totalGamesPlayed += 1
@@ -45,14 +52,15 @@ class WhoWonVC: UIViewController {
             daleWonButtonDress(destination: destinationVC)
             lewisWonButtonPressed(destination: destinationVC)
             drawButtonPressed(destination: destinationVC)
-            saveGameData(destination: destinationVC)
         default:
             return
         }
         
     }
     
-    func lewisWonButtonPressed(destination: MainScreenVC) {
+    
+    //MARK:- functions to work out the scores
+    func lewisWonButtonPressed(destination: SelectedGameVC) {
         let calculatePercentageLewis = PertentageCalc(daleScore: destination.dalesScore, lewisScore: destination.lewisScore, totalGames: destination.totalGamesPlayed).calculatePercentage()
         (destination.daleWinPercentage, destination.lewisWinPercentage) = calculatePercentageLewis
         if destination.lewisScore > destination.dalesScore {
@@ -63,7 +71,7 @@ class WhoWonVC: UIViewController {
         
     }
     
-    func daleWonButtonDress(destination: MainScreenVC) {
+    func daleWonButtonDress(destination: SelectedGameVC) {
         let calculatePercentageDale = PertentageCalc(daleScore: destination.dalesScore, lewisScore: destination.lewisScore, totalGames: destination.totalGamesPlayed).calculatePercentage()
         (destination.daleWinPercentage, destination.lewisWinPercentage) = calculatePercentageDale
         if destination.dalesScore > destination.lewisScore {
@@ -74,13 +82,14 @@ class WhoWonVC: UIViewController {
         
     }
     
-    func saveGameData(destination: MainScreenVC) {
-        let saveInfo =  SaveInfo(daleScore: destination.dalesScore, lewisScore: destination.lewisScore, totalGamesPlayed: destination.totalGamesPlayed, currentChampion: destination.currentChampion, daleWinPercentage: destination.daleWinPercentage, lewisWinPercentage: destination.lewisWinPercentage, drawnGames: destination.draw, drawPercentage: destination.drawPercentage, lastWinner: destination.lastWinner)
-        saveInfo.saveScores()
+    func drawButtonPressed(destination: SelectedGameVC) {
+        let drawPercentage = destination.lewisWinPercentage + destination.daleWinPercentage - 100
+        destination.drawPercentage = abs(drawPercentage)
         
     }
     
     
+    //MARK:- IBActions/button pressed
     @IBAction func lewisWonButton(_ sender: UIButton) {
         buttonPressedTag = sender.tag
         
@@ -101,11 +110,7 @@ class WhoWonVC: UIViewController {
     }
     
     
-    func drawButtonPressed(destination: MainScreenVC) {
-        let drawPercentage = destination.lewisWinPercentage + destination.daleWinPercentage - 100
-        destination.drawPercentage = abs(drawPercentage)
-        
-    }
+    
     
     
 }
