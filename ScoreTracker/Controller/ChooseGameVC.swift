@@ -13,17 +13,16 @@ class ChooseGameVC: UITableViewController {
     //MARK:- Outlets, Constants & Variables
     
     //Constants
-    let gameTypeArray = ["Chess", "Pool"]
-    
+    let gameTypeArray = ChosenGame().game
     //Variables
+   
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
     }
 
-    // MARK: - Table view data source
-    
+    //MARK: - TableView & SwipeTableView delegate methods
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gameTypeCell", for: indexPath)
         cell.textLabel?.text = gameTypeArray[indexPath.row]
@@ -35,10 +34,21 @@ class ChooseGameVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        performSegue(withIdentifier: GO_TO_CHOOSE_GAME_VC, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == GO_TO_CHOOSE_GAME_VC {
+        let destinationVC = segue.destination as! SelectMatchVC
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.selectedMatch = gameTypeArray[indexPath.row]
+          }
+        }
+    }
+    
+
+
     
     //MARK:- IBActions/Button Pressed
 
@@ -51,6 +61,8 @@ class ChooseGameVC: UITableViewController {
             print("Error Logging Out")
         }
     }
+    
+    
     
     
     

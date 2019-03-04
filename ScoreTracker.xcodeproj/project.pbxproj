@@ -25,7 +25,10 @@
 		F693458A222D540B008820B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6934589222D540A008820B3 /* GoogleService-Info.plist */; };
 		F6987E85220DF04F0062CBEE /* ParallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */; };
 		F6CF9B2F220CA81A00774FED /* PercentageCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */; };
-		F6E2080F222D901A00E94941 /* matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2080E222D901A00E94941 /* matches.swift */; };
+		F6E20811222DAC7600E94941 /* ChosenGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20810222DAC7600E94941 /* ChosenGame.swift */; };
+		F6E20813222DAC8700E94941 /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20812222DAC8700E94941 /* ScoreData.swift */; };
+		F6E20815222DACA800E94941 /* Matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20814222DACA800E94941 /* Matches.swift */; };
+		F6E20817222DADDF00E94941 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20816222DADDF00E94941 /* PlayerDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +53,10 @@
 		F6934589222D540A008820B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxEffect.swift; sourceTree = "<group>"; };
 		F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCalc.swift; sourceTree = "<group>"; };
-		F6E2080E222D901A00E94941 /* matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matches.swift; sourceTree = "<group>"; };
+		F6E20810222DAC7600E94941 /* ChosenGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenGame.swift; sourceTree = "<group>"; };
+		F6E20812222DAC8700E94941 /* ScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
+		F6E20814222DACA800E94941 /* Matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matches.swift; sourceTree = "<group>"; };
+		F6E20816222DADDF00E94941 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
 		F93F831D4AE02B5279DB878C /* Pods-ScoreTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreTracker.release.xcconfig"; path = "Target Support Files/Pods-ScoreTracker/Pods-ScoreTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,8 +158,11 @@
 		F68933A1220C65F700858BB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F6E20816222DADDF00E94941 /* PlayerDetails.swift */,
+				F6E20810222DAC7600E94941 /* ChosenGame.swift */,
+				F6E20814222DACA800E94941 /* Matches.swift */,
+				F6E20812222DAC8700E94941 /* ScoreData.swift */,
 				F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */,
-				F6E2080E222D901A00E94941 /* matches.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,18 +309,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E20813222DAC8700E94941 /* ScoreData.swift in Sources */,
 				F6CF9B2F220CA81A00774FED /* PercentageCalc.swift in Sources */,
 				F66CC08F222D402E00714C72 /* RegisterVC.swift in Sources */,
 				F68933A7220C677C00858BB1 /* CustomButtonView.swift in Sources */,
 				F66649B42205B6250003D116 /* SelectedGameVC.swift in Sources */,
+				F6E20817222DADDF00E94941 /* PlayerDetails.swift in Sources */,
 				F66649B22205B6250003D116 /* AppDelegate.swift in Sources */,
 				F685A5AD222D6FD9000A294C /* Constants.swift in Sources */,
 				F66CC08D222D401E00714C72 /* LogInVC.swift in Sources */,
 				F6987E85220DF04F0062CBEE /* ParallaxEffect.swift in Sources */,
 				F66CC095222D416100714C72 /* ChooseGameVC.swift in Sources */,
 				F66CC08B222D401100714C72 /* WelcomeScreenVC.swift in Sources */,
+				F6E20811222DAC7600E94941 /* ChosenGame.swift in Sources */,
 				F66649C82205C3B90003D116 /* WhoWonVC.swift in Sources */,
-				F6E2080F222D901A00E94941 /* matches.swift in Sources */,
+				F6E20815222DACA800E94941 /* Matches.swift in Sources */,
 				F66CC093222D410A00714C72 /* SelectMatchVC.swift in Sources */,
 				F68933A5220C672700858BB1 /* CustomLabelFile.swift in Sources */,
 			);

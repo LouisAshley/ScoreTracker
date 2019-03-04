@@ -130,6 +130,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="kQO-bs-qur" kind="unwind" identifier="unwindToWelcomeScreenVC" unwindAction="unwindToWelcomeScreenVCWithSegue:" id="UeL-ai-LGp"/>
+                        <segue destination="oLx-Ty-byv" kind="show" identifier="goToChooseGameVC" id="X40-qG-jWx"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnl-2V-brd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -146,7 +147,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="5ej-6l-opH">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="matchesCell" id="5ej-6l-opH">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5ej-6l-opH" id="wW2-pA-uin">
@@ -364,11 +365,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="backgroundOutlet" destination="gT4-5o-gDv" id="aQ6-Ax-Lxr"/>
-                        <outlet property="currentChampionLabel" destination="n4r-yg-yzk" id="4oH-Jh-z8P"/>
-                        <segue destination="ep8-5J-wGM" kind="show" identifier="whoWonSegue" id="dkh-Jf-K13"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
