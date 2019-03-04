@@ -25,8 +25,7 @@
 		F693458A222D540B008820B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6934589222D540A008820B3 /* GoogleService-Info.plist */; };
 		F6987E85220DF04F0062CBEE /* ParallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */; };
 		F6CF9B2F220CA81A00774FED /* PercentageCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */; };
-		F6DAAFAD22105D1800F1D86C /* SaveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DAAFAC22105D1800F1D86C /* SaveInfo.swift */; };
-		F6DAAFAF221068FC00F1D86C /* DefaultValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DAAFAE221068FC00F1D86C /* DefaultValues.swift */; };
+		F6E2080F222D901A00E94941 /* matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E2080E222D901A00E94941 /* matches.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,8 +50,7 @@
 		F6934589222D540A008820B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxEffect.swift; sourceTree = "<group>"; };
 		F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCalc.swift; sourceTree = "<group>"; };
-		F6DAAFAC22105D1800F1D86C /* SaveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInfo.swift; sourceTree = "<group>"; };
-		F6DAAFAE221068FC00F1D86C /* DefaultValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValues.swift; sourceTree = "<group>"; };
+		F6E2080E222D901A00E94941 /* matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = matches.swift; sourceTree = "<group>"; };
 		F93F831D4AE02B5279DB878C /* Pods-ScoreTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreTracker.release.xcconfig"; path = "Target Support Files/Pods-ScoreTracker/Pods-ScoreTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,8 +142,8 @@
 				F66CC08E222D402E00714C72 /* RegisterVC.swift */,
 				F66CC08C222D401E00714C72 /* LogInVC.swift */,
 				F66CC094222D416100714C72 /* ChooseGameVC.swift */,
-				F66649B32205B6250003D116 /* SelectedGameVC.swift */,
 				F66CC092222D410A00714C72 /* SelectMatchVC.swift */,
+				F66649B32205B6250003D116 /* SelectedGameVC.swift */,
 				F66649C72205C3B90003D116 /* WhoWonVC.swift */,
 			);
 			path = Controller;
@@ -155,8 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */,
-				F6DAAFAC22105D1800F1D86C /* SaveInfo.swift */,
-				F6DAAFAE221068FC00F1D86C /* DefaultValues.swift */,
+				F6E2080E222D901A00E94941 /* matches.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,13 +306,12 @@
 				F66649B42205B6250003D116 /* SelectedGameVC.swift in Sources */,
 				F66649B22205B6250003D116 /* AppDelegate.swift in Sources */,
 				F685A5AD222D6FD9000A294C /* Constants.swift in Sources */,
-				F6DAAFAF221068FC00F1D86C /* DefaultValues.swift in Sources */,
-				F6DAAFAD22105D1800F1D86C /* SaveInfo.swift in Sources */,
 				F66CC08D222D401E00714C72 /* LogInVC.swift in Sources */,
 				F6987E85220DF04F0062CBEE /* ParallaxEffect.swift in Sources */,
 				F66CC095222D416100714C72 /* ChooseGameVC.swift in Sources */,
 				F66CC08B222D401100714C72 /* WelcomeScreenVC.swift in Sources */,
 				F66649C82205C3B90003D116 /* WhoWonVC.swift in Sources */,
+				F6E2080F222D901A00E94941 /* matches.swift in Sources */,
 				F66CC093222D410A00714C72 /* SelectMatchVC.swift in Sources */,
 				F68933A5220C672700858BB1 /* CustomLabelFile.swift in Sources */,
 			);

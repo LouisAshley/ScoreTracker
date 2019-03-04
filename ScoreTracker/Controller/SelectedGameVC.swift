@@ -15,10 +15,10 @@ class SelectedGameVC: UIViewController {
     // Outlets
     @IBOutlet weak var currentChampionLabel: UILabel!
     @IBOutlet weak var totalGamesPlayedLabel: UILabel!
-    @IBOutlet weak var daleScoreLabel: UILabel!
-    @IBOutlet weak var lewisScoreLabel: UILabel!
-    @IBOutlet weak var daleWinnngPercentageLabel: UILabel!
-    @IBOutlet weak var lewisWinningPercentageLabel: UILabel!
+    @IBOutlet weak var scoreLabelOne: UILabel!
+    @IBOutlet weak var scoreLabelTwo: UILabel!
+    @IBOutlet weak var winnngPercentageLabelOne: UILabel!
+    @IBOutlet weak var winningPercentageLabelTwo: UILabel!
     @IBOutlet weak var backgroundOutlet: UIImageView!
     @IBOutlet weak var lastWinnerLabel: UILabel!
     @IBOutlet var drawLabel: UILabel!
@@ -26,12 +26,12 @@ class SelectedGameVC: UIViewController {
     
     
     // Variables
-    var dalesScore = 0.0
-    var lewisScore = 0.0
+    var scoreOne = 0.0
+    var scoreTwo = 0.0
     var totalGamesPlayed = 0.0
     var currentChampion = ""
-    var daleWinPercentage = 0.0
-    var lewisWinPercentage = 0.0
+    var winPercentageOne = 0.0
+    var winPercentageTwo = 0.0
     var lastWinner = ""
     var draw = 0.0
     var drawPercentage = 0.0
@@ -53,30 +53,17 @@ class SelectedGameVC: UIViewController {
     
     //MARK:- Set up game labels and buttons functions
     func setLabels() {
-        daleWinnngPercentageLabel.text = "Winning Percentage: \n\(Int(daleWinPercentage))%"
-        lewisWinningPercentageLabel.text = "Winning percentage: \n\(Int(lewisWinPercentage))%"
-        drawPercentageLabel.text = "Draw Percentage: \(Int(drawPercentage))%"
-        daleScoreLabel.text = "Dale: \n\(Int(dalesScore))"
-        lewisScoreLabel.text = "Lewis: \n\(Int(lewisScore))"
+        scoreLabelOne.text = "You: \n\(Int(scoreOne))"
+        scoreLabelTwo.text = "Player Two: \n\(Int(scoreTwo))"
         drawLabel.text = "Draws: \(Int(draw))"
+        winnngPercentageLabelOne.text = "Winning Percentage: \n\(Int(winPercentageOne))%"
+        winningPercentageLabelTwo.text = "Winning percentage: \n\(Int(winPercentageTwo))%"
+        drawPercentageLabel.text = "Draw Percentage: \(Int(drawPercentage))%"
         currentChampionLabel.text = "Current Champion: \(currentChampion)"
         totalGamesPlayedLabel.text = "Games Played: \(Int(totalGamesPlayed))"
         lastWinnerLabel.text = "Last Winner: \(lastWinner)"
         
     }
-    
-    func defaultValuesButtonPressed() {
-        dalesScore = DefaultValues().dalesScore
-        lewisScore = DefaultValues().lewisScore
-        totalGamesPlayed = DefaultValues().totalGamesPlayed
-        currentChampion = DefaultValues().currentChampion
-        daleWinPercentage = DefaultValues().dalesWinPercentage
-        lewisWinPercentage = DefaultValues().lewisWinPercentage
-        draw = DefaultValues().draw
-        drawPercentage = DefaultValues().drawPercentage
-        lastWinner = DefaultValues().lastWinner
-    }
-    
     
     //MARK:- IBActions/Button pressed
     @IBAction func addNewVictoryButton(_ sender: UIButton) {
@@ -84,14 +71,7 @@ class SelectedGameVC: UIViewController {
         
     }
     
-    @IBAction func unwindToMainScreenVC(_ sender: UIStoryboardSegue) {}
-    
-    @IBAction func restartScores(_ sender: UIButton) {
-        defaultValuesButtonPressed()
-        setLabels()
-        print("I was pressed to restart")
-        
-    }
+    @IBAction func unwindToSelectedGameVC(_ sender: UIStoryboardSegue) {}
     
     
     

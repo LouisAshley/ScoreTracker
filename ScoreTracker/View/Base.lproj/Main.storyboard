@@ -318,21 +318,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Add New Victory"/>
-                                        <connections>
-                                            <action selector="addNewVictoryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hhA-BG-1uA"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8XH-ba-6hy" customClass="CustomButtonView" customModule="ScoreTracker" customModuleProvider="target">
-                                <rect key="frame" x="20" y="30" width="100" height="30"/>
-                                <state key="normal" title="Reset Scores">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="restartScores:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pkO-Py-Sj4"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-a0-oiB" userLabel="ChessLBL" customClass="CustomLabelFile" customModule="ScoreTracker" customModuleProvider="target">
                                 <rect key="frame" x="147" y="29.999999999999996" width="120" height="50.666666666666657"/>
                                 <attributedString key="attributedText">
@@ -364,10 +352,7 @@
                             <constraint firstItem="uDV-c0-PDr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UxC-80-Kqz"/>
                             <constraint firstAttribute="bottom" secondItem="gT4-5o-gDv" secondAttribute="bottom" constant="-30" id="V4J-hh-QQI"/>
                             <constraint firstItem="pU9-aF-WpH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WrT-Pi-JWE"/>
-                            <constraint firstItem="8XH-ba-6hy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Xpb-Y3-AsR"/>
-                            <constraint firstItem="8XH-ba-6hy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="ZIg-KT-RSY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="uDV-c0-PDr" secondAttribute="trailing" constant="20" id="b1L-3V-ZSp"/>
-                            <constraint firstItem="3Zd-a0-oiB" firstAttribute="leading" secondItem="8XH-ba-6hy" secondAttribute="trailing" constant="27" id="bsT-HU-F2K"/>
                             <constraint firstItem="gT4-5o-gDv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-30" id="grc-ve-EIR"/>
                             <constraint firstItem="gT4-5o-gDv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hbz-Va-2lP"/>
                             <constraint firstItem="pU9-aF-WpH" firstAttribute="top" secondItem="F0A-Qm-Alb" secondAttribute="bottom" constant="15" id="mBf-MP-g8u"/>
@@ -382,14 +367,6 @@
                     <connections>
                         <outlet property="backgroundOutlet" destination="gT4-5o-gDv" id="aQ6-Ax-Lxr"/>
                         <outlet property="currentChampionLabel" destination="n4r-yg-yzk" id="4oH-Jh-z8P"/>
-                        <outlet property="daleScoreLabel" destination="AWN-Oq-tVd" id="sEq-9n-SQ1"/>
-                        <outlet property="daleWinnngPercentageLabel" destination="7Df-Wz-CO6" id="5Sh-Ru-RPC"/>
-                        <outlet property="drawLabel" destination="3kg-TH-ysi" id="ZGj-ro-hdh"/>
-                        <outlet property="drawPercentageLabel" destination="CD3-DP-WXH" id="rw9-gK-hSu"/>
-                        <outlet property="lastWinnerLabel" destination="nhB-PM-iR6" id="Puk-VK-ex0"/>
-                        <outlet property="lewisScoreLabel" destination="1AH-XO-Vnl" id="E7P-45-sVV"/>
-                        <outlet property="lewisWinningPercentageLabel" destination="YwZ-1d-sLY" id="DGi-qy-71n"/>
-                        <outlet property="totalGamesPlayedLabel" destination="d6h-hN-P5H" id="HOm-DO-oP1"/>
                         <segue destination="ep8-5J-wGM" kind="show" identifier="whoWonSegue" id="dkh-Jf-K13"/>
                     </connections>
                 </viewController>
@@ -416,8 +393,7 @@
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="52"/>
                                         <state key="normal" title="Dale"/>
                                         <connections>
-                                            <action selector="daleWonButton:" destination="ep8-5J-wGM" eventType="touchUpInside" id="jft-aJ-aNT"/>
-                                            <segue destination="sqt-Vs-wYj" kind="unwind" unwindAction="unwindToMainScreenVC:" id="QCU-i9-z90"/>
+                                            <segue destination="sqt-Vs-wYj" kind="unwind" unwindAction="unwindToSelectedGameVC:" id="6zi-o5-Uk7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbb-gf-QuV" customClass="CustomButtonView" customModule="ScoreTracker" customModuleProvider="target">
@@ -425,8 +401,7 @@
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="52"/>
                                         <state key="normal" title="Lewis"/>
                                         <connections>
-                                            <action selector="lewisWonButton:" destination="ep8-5J-wGM" eventType="touchUpInside" id="3Gq-hS-LFz"/>
-                                            <segue destination="sqt-Vs-wYj" kind="unwind" unwindAction="unwindToMainScreenVC:" id="xRp-Vh-Mip"/>
+                                            <segue destination="sqt-Vs-wYj" kind="unwind" unwindAction="unwindToSelectedGameVC:" id="JH7-qq-jXl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qf6-KG-jFO" customClass="CustomButtonView" customModule="ScoreTracker" customModuleProvider="target">
@@ -434,14 +409,13 @@
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="52"/>
                                         <state key="normal" title="Draw"/>
                                         <connections>
-                                            <action selector="drawButton:" destination="ep8-5J-wGM" eventType="touchUpInside" id="hYm-h1-jfu"/>
-                                            <segue destination="sqt-Vs-wYj" kind="unwind" unwindAction="unwindToMainScreenVC:" id="qwF-kY-l1Q"/>
+                                            <segue destination="sqt-Vs-wYj" kind="unwind" unwindAction="unwindToSelectedGameVC:" id="pXC-7U-SKs"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who Won" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Keg-m2-I49" customClass="CustomLabelFile" customModule="ScoreTracker" customModuleProvider="target">
-                                <rect key="frame" x="80" y="45" width="254" height="69"/>
+                                <rect key="frame" x="80" y="44.999999999999993" width="254" height="68.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="254" id="Qub-Ua-qzG"/>
                                 </constraints>
@@ -449,32 +423,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqp-zJ-Dwu" customClass="CustomButtonView" customModule="ScoreTracker" customModuleProvider="target">
-                                <rect key="frame" x="20" y="62" width="35" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Yd5-Of-got"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <state key="normal" title="&lt;"/>
-                                <connections>
-                                    <action selector="backButtonWhoWonVC:" destination="ep8-5J-wGM" eventType="touchUpInside" id="sdD-sL-fdf"/>
-                                    <segue destination="sqt-Vs-wYj" kind="unwind" unwindAction="unwindToMainScreenVC:" id="7tf-CV-loj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="td8-eC-YY4" firstAttribute="top" secondItem="MKT-QM-Odt" secondAttribute="top" constant="-30" id="40T-Fm-8WB"/>
-                            <constraint firstItem="oqp-zJ-Dwu" firstAttribute="centerY" secondItem="Keg-m2-I49" secondAttribute="centerY" id="7oM-id-K6n"/>
                             <constraint firstItem="Keg-m2-I49" firstAttribute="centerX" secondItem="Ue4-yM-TLQ" secondAttribute="centerX" id="8s7-9H-Uru"/>
                             <constraint firstItem="Keg-m2-I49" firstAttribute="top" secondItem="1to-uH-YFZ" secondAttribute="top" constant="25" id="Bhl-5I-uKn"/>
                             <constraint firstItem="Ue4-yM-TLQ" firstAttribute="leading" secondItem="1to-uH-YFZ" secondAttribute="leading" constant="20" id="EmY-Xr-TXs"/>
                             <constraint firstItem="Ue4-yM-TLQ" firstAttribute="centerX" secondItem="MKT-QM-Odt" secondAttribute="centerX" id="K0a-Th-58Q"/>
-                            <constraint firstItem="oqp-zJ-Dwu" firstAttribute="top" secondItem="1to-uH-YFZ" secondAttribute="top" constant="42" id="MOx-21-sWn"/>
                             <constraint firstItem="td8-eC-YY4" firstAttribute="centerY" secondItem="MKT-QM-Odt" secondAttribute="centerY" id="PVn-w4-MRP"/>
                             <constraint firstItem="td8-eC-YY4" firstAttribute="leading" secondItem="MKT-QM-Odt" secondAttribute="leading" constant="-30" id="Sdx-AU-Rvx"/>
-                            <constraint firstItem="Keg-m2-I49" firstAttribute="leading" secondItem="oqp-zJ-Dwu" secondAttribute="trailing" constant="25" id="cBb-Eu-FmX"/>
-                            <constraint firstItem="oqp-zJ-Dwu" firstAttribute="leading" secondItem="Ue4-yM-TLQ" secondAttribute="leading" id="myq-U9-Z2c"/>
                             <constraint firstItem="Ue4-yM-TLQ" firstAttribute="centerY" secondItem="MKT-QM-Odt" secondAttribute="centerY" id="oqf-di-FjU"/>
                             <constraint firstItem="1to-uH-YFZ" firstAttribute="trailing" secondItem="Ue4-yM-TLQ" secondAttribute="trailing" constant="20" id="qoP-Uj-UiU"/>
                             <constraint firstItem="td8-eC-YY4" firstAttribute="bottom" secondItem="MKT-QM-Odt" secondAttribute="bottom" constant="30" id="rb3-mN-Q9p"/>

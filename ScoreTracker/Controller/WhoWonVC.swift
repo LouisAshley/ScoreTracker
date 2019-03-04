@@ -31,27 +31,27 @@ class WhoWonVC: UIViewController {
     
     //MARK:- Segueways functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! SelectedGameVC
+        let selectedGameVC = segue.destination as! SelectedGameVC
         switch buttonPressedTag {
         case 2:
-            destinationVC.lastWinner = "Dale"
-            destinationVC.totalGamesPlayed += 1
-            destinationVC.dalesScore += 1
-            daleWonButtonDress(destination: destinationVC)
-            drawButtonPressed(destination: destinationVC)
+            selectedGameVC.scoreOne += 1
+            selectedGameVC.lastWinner = "Player One"
+            selectedGameVC.totalGamesPlayed += 1
+            playerOneButtonPressed(destinationVC: selectedGameVC)
+            drawButtonPressed(destinationVC: selectedGameVC)
         case 3:
-            destinationVC.lastWinner = "Lewis"
-            destinationVC.totalGamesPlayed += 1
-            destinationVC.lewisScore += 1
-            lewisWonButtonPressed(destination: destinationVC)
-            drawButtonPressed(destination: destinationVC)
+            selectedGameVC.scoreTwo += 1
+            selectedGameVC.lastWinner = "Player Two"
+            selectedGameVC.totalGamesPlayed += 1
+            playerTwoButtonPressed(destinationVC: selectedGameVC)
+            drawButtonPressed(destinationVC: selectedGameVC)
+            
         case 4:
-            destinationVC.lastWinner = "Draw"
-            destinationVC.totalGamesPlayed += 1
-            destinationVC.draw += 1
-            daleWonButtonDress(destination: destinationVC)
-            lewisWonButtonPressed(destination: destinationVC)
-            drawButtonPressed(destination: destinationVC)
+            selectedGameVC.lastWinner = "Draw"
+            selectedGameVC.totalGamesPlayed += 1
+            selectedGameVC.draw += 1
+            playerOneButtonPressed(destinationVC: selectedGameVC)
+            playerTwoButtonPressed(destinationVC: selectedGameVC)
         default:
             return
         }
@@ -59,43 +59,42 @@ class WhoWonVC: UIViewController {
     }
     
     
-    //MARK:- functions to work out the scores
-    func lewisWonButtonPressed(destination: SelectedGameVC) {
-        let calculatePercentageLewis = PertentageCalc(daleScore: destination.dalesScore, lewisScore: destination.lewisScore, totalGames: destination.totalGamesPlayed).calculatePercentage()
-        (destination.daleWinPercentage, destination.lewisWinPercentage) = calculatePercentageLewis
-        if destination.lewisScore > destination.dalesScore {
-            destination.currentChampion = "Lewis"
-        } else if destination.lewisScore == destination.dalesScore {
-            destination.currentChampion = "Draw"
+    //MARK:- functions to work out the percentages and scores
+    func playerOneButtonPressed(destinationVC: SelectedGameVC) {
+        let calculateScoreOnePercentage = PertentageCalc(scoreOne: destinationVC.scoreOne, scoreTwo: destinationVC.scoreTwo, totalGames: destinationVC.totalGamesPlayed).calculatePercentage()
+        (destinationVC.winPercentageOne, destinationVC.winPercentageTwo) = calculateScoreOnePercentage
+        if destinationVC.scoreOne > destinationVC.scoreTwo {
+            destinationVC.currentChampion = "Player One"
+        } else if destinationVC.scoreOne == destinationVC.scoreTwo {
+            destinationVC.currentChampion = "Draw"
         }
         
     }
     
-    func daleWonButtonDress(destination: SelectedGameVC) {
-        let calculatePercentageDale = PertentageCalc(daleScore: destination.dalesScore, lewisScore: destination.lewisScore, totalGames: destination.totalGamesPlayed).calculatePercentage()
-        (destination.daleWinPercentage, destination.lewisWinPercentage) = calculatePercentageDale
-        if destination.dalesScore > destination.lewisScore {
-            destination.currentChampion = "Dale"
-        } else if destination.dalesScore == destination.lewisScore {
-            destination.currentChampion = "Draw"
+    func playerTwoButtonPressed(destinationVC: SelectedGameVC) {
+        let calculateScoreTwoPercentage = PertentageCalc(scoreOne: destinationVC.scoreOne, scoreTwo: destinationVC.scoreTwo, totalGames: destinationVC.totalGamesPlayed).calculatePercentage()
+        (destinationVC.winPercentageOne, destinationVC.winPercentageTwo) = calculateScoreTwoPercentage
+        if destinationVC.scoreTwo > destinationVC.scoreOne {
+            destinationVC.currentChampion = "Player Two"
+        } else if destinationVC.scoreTwo ==  destinationVC.scoreOne {
+            destinationVC.currentChampion = "Draw"
         }
-        
     }
     
-    func drawButtonPressed(destination: SelectedGameVC) {
-        let drawPercentage = destination.lewisWinPercentage + destination.daleWinPercentage - 100
-        destination.drawPercentage = abs(drawPercentage)
+    func drawButtonPressed(destinationVC: SelectedGameVC) {
+        let drawPercentage = destinationVC.scoreOne + destinationVC.scoreTwo - 100
+        destinationVC.drawPercentage = abs(drawPercentage)
         
     }
     
     
     //MARK:- IBActions/button pressed
-    @IBAction func lewisWonButton(_ sender: UIButton) {
+    @IBAction func playerOneButton(_ sender: UIButton) {
         buttonPressedTag = sender.tag
         
     }
     
-    @IBAction func daleWonButton(_ sender: UIButton) {
+    @IBAction func playerTwoButton(_ sender: UIButton) {
         buttonPressedTag = sender.tag
         
     }
@@ -104,11 +103,6 @@ class WhoWonVC: UIViewController {
         buttonPressedTag = sender.tag
         
     }
-    
-    @IBAction func backButtonWhoWonVC(_ sender: Any) {
-        
-    }
-    
     
     
     
