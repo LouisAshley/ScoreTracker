@@ -51,12 +51,11 @@ class ChooseGameVC: UITableViewController {
 
     
     //MARK:- IBActions/Button Pressed
-
     @IBAction func logOutButtonPressed(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
             print("Logged Out Successfully")
-            performSegue(withIdentifier: UNWIND_TO_WELCOMESCREENVC, sender: nil)
+            performSegue(withIdentifier: UNWIND_TO_WELCOMESCREEN_VC, sender: nil)
         } catch {
             print("Error Logging Out")
         }

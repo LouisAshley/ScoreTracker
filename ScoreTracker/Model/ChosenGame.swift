@@ -10,6 +10,6 @@ import Foundation
 
 class ChosenGame {
     
-    var game = ["Chess", "Pool", "Draughs", "Squash"]
+    var game = ["Chess", "Pool"]
     
 }

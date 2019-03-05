@@ -8,8 +8,6 @@
 
 import Foundation
 
-class Matches {
-    
-    var opponents: String = ""
-    
-}
+
+    var opponents = [String]()
+

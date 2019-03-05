@@ -8,8 +8,5 @@
 
 import Foundation
 
+var nickName = ""
 
-class PlayerDetails {
-    var nickName = ""
-
-}

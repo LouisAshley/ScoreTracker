@@ -33,17 +33,16 @@ class RegisterVC: UIViewController {
     //Adds user details to Firebase and sets up a nick name in the playerDetails.swift
     @IBAction func registerButtonPressed(_ sender: UIButton) {
         var textFieldString = UITextField()
-        let alert = UIAlertController(title: "Add Nickname", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Add Your Name", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             SVProgressHUD.show()
-            let playerDetails = PlayerDetails()
-            playerDetails.nickName = textFieldString.text!
             Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
                 if error != nil {
                     print(error!)
                     SVProgressHUD.dismiss()
                 } else {
                     print("Registration Successful")
+                    nickName = textFieldString.text!
                     self.performSegue(withIdentifier: GO_TO_CHOOSE_GAME_VC, sender: self)
                     SVProgressHUD.dismiss()
                 }
@@ -51,7 +50,7 @@ class RegisterVC: UIViewController {
         }
         alert.addAction(action)
         alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Enter Your Nickname"
+            alertTextField.placeholder = "Enter Your Name"
             textFieldString = alertTextField
         }
         present(alert, animated: true)

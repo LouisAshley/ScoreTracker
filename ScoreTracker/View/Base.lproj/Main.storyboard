@@ -138,7 +138,7 @@
             </objects>
             <point key="canvasLocation" x="-865" y="24"/>
         </scene>
-        <!--Select MatchVC-->
+        <!--Title-->
         <scene sceneID="wTR-qN-01e">
             <objects>
                 <tableViewController id="oLx-Ty-byv" customClass="SelectMatchVC" customModule="ScoreTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -154,6 +154,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goToSelectedGameVC" id="LuJ-vy-4p0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -161,6 +164,13 @@
                             <outlet property="delegate" destination="oLx-Ty-byv" id="AiS-dR-YAm"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="lCM-ds-Shg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pEB-fn-e0e">
+                            <connections>
+                                <action selector="addNewOpponent:" destination="oLx-Ty-byv" id="mYH-ua-8rp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CjQ-9s-0d6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,11 +229,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chess5" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-5o-gDv" userLabel="chessIMG">
-                                <rect key="frame" x="-30" y="-30" width="474" height="796"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chess5" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-5o-gDv" userLabel="chessIMG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Champion:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-yg-yzk" customClass="CustomLabelFile" customModule="ScoreTracker" customModuleProvider="target">
-                                <rect key="frame" x="20" y="119.33333333333331" width="374" height="40"/>
+                                <rect key="frame" x="20" y="75.333333333333329" width="374" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="5Sh-mu-lJY"/>
                                 </constraints>
@@ -232,7 +242,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="19" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0A-Qm-Alb" userLabel="Names StackView">
-                                <rect key="frame" x="20" y="174.33333333333334" width="374" height="128.00000000000003"/>
+                                <rect key="frame" x="20" y="130.33333333333334" width="374" height="128.00000000000003"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dale: 0" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="none" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWN-Oq-tVd" customClass="CustomLabelFile" customModule="ScoreTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="128"/>
@@ -258,7 +268,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="19" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pU9-aF-WpH" userLabel="Percentage StackView">
-                                <rect key="frame" x="20" y="317.33333333333331" width="374" height="128"/>
+                                <rect key="frame" x="20" y="273.33333333333331" width="374" height="128"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning Percentage: 0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Df-Wz-CO6" customClass="CustomLabelFile" customModule="ScoreTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="177" height="128"/>
@@ -285,7 +295,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uDV-c0-PDr">
-                                <rect key="frame" x="20" y="460.33333333333331" width="374" height="255.66666666666669"/>
+                                <rect key="frame" x="20" y="416.33333333333331" width="374" height="255.66666666666669"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Winner:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nhB-PM-iR6" customClass="CustomLabelFile" customModule="ScoreTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="35.666666666666664"/>
@@ -319,11 +329,14 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Add New Victory"/>
+                                        <connections>
+                                            <action selector="addNewVictoryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KiQ-u6-M8q"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Zd-a0-oiB" userLabel="ChessLBL" customClass="CustomLabelFile" customModule="ScoreTracker" customModuleProvider="target">
-                                <rect key="frame" x="147" y="29.999999999999996" width="120" height="50.666666666666657"/>
+                                <rect key="frame" x="147" y="74" width="120" height="50.666666666666657"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Chess">
                                         <attributes>
@@ -339,22 +352,22 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gT4-5o-gDv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="490-HD-fCV"/>
-                            <constraint firstItem="gT4-5o-gDv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-30" id="5ld-Dh-0jJ"/>
+                            <constraint firstItem="gT4-5o-gDv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="5ld-Dh-0jJ"/>
                             <constraint firstItem="3Zd-a0-oiB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CAs-lF-KbO"/>
                             <constraint firstItem="3Zd-a0-oiB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="CLs-Rf-iPt"/>
                             <constraint firstItem="n4r-yg-yzk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="DC7-Ad-K5w"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="pU9-aF-WpH" secondAttribute="trailing" constant="20" id="MwA-C0-bxo"/>
                             <constraint firstItem="uDV-c0-PDr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NWc-ys-KTJ"/>
-                            <constraint firstAttribute="trailing" secondItem="gT4-5o-gDv" secondAttribute="trailing" constant="-30" id="OyZ-cH-zOG"/>
+                            <constraint firstAttribute="trailing" secondItem="gT4-5o-gDv" secondAttribute="trailing" id="OyZ-cH-zOG"/>
                             <constraint firstItem="uDV-c0-PDr" firstAttribute="top" secondItem="pU9-aF-WpH" secondAttribute="bottom" constant="15" id="R1D-XZ-Xu3"/>
                             <constraint firstItem="F0A-Qm-Alb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SDl-Li-f1P"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="3Zd-a0-oiB" secondAttribute="trailing" constant="147" id="Sxf-Rj-4Cx"/>
                             <constraint firstItem="F0A-Qm-Alb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TPp-2K-hjK"/>
                             <constraint firstItem="uDV-c0-PDr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UxC-80-Kqz"/>
-                            <constraint firstAttribute="bottom" secondItem="gT4-5o-gDv" secondAttribute="bottom" constant="-30" id="V4J-hh-QQI"/>
+                            <constraint firstAttribute="bottom" secondItem="gT4-5o-gDv" secondAttribute="bottom" id="V4J-hh-QQI"/>
                             <constraint firstItem="pU9-aF-WpH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WrT-Pi-JWE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="uDV-c0-PDr" secondAttribute="trailing" constant="20" id="b1L-3V-ZSp"/>
-                            <constraint firstItem="gT4-5o-gDv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-30" id="grc-ve-EIR"/>
+                            <constraint firstItem="gT4-5o-gDv" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="grc-ve-EIR"/>
                             <constraint firstItem="gT4-5o-gDv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hbz-Va-2lP"/>
                             <constraint firstItem="pU9-aF-WpH" firstAttribute="top" secondItem="F0A-Qm-Alb" secondAttribute="bottom" constant="15" id="mBf-MP-g8u"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="F0A-Qm-Alb" secondAttribute="trailing" constant="20" id="ptF-ck-AMe"/>
@@ -365,6 +378,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundOutlet" destination="gT4-5o-gDv" id="0a6-3R-cWK"/>
+                        <outlet property="currentChampionLabel" destination="n4r-yg-yzk" id="bRm-Jn-1Kj"/>
+                        <outlet property="drawLabel" destination="3kg-TH-ysi" id="G8m-AL-8Wn"/>
+                        <outlet property="drawPercentageLabel" destination="CD3-DP-WXH" id="rdP-YC-Nsk"/>
+                        <outlet property="gameNameLabel" destination="3Zd-a0-oiB" id="ovD-Gz-N4O"/>
+                        <outlet property="lastWinnerLabel" destination="nhB-PM-iR6" id="sgb-p1-RS2"/>
+                        <outlet property="scoreLabelOne" destination="AWN-Oq-tVd" id="Kpx-L9-OwU"/>
+                        <outlet property="scoreLabelTwo" destination="1AH-XO-Vnl" id="PcX-hf-HsY"/>
+                        <outlet property="totalGamesPlayedLabel" destination="d6h-hN-P5H" id="yt6-Ht-out"/>
+                        <outlet property="winningPercentageLabelTwo" destination="YwZ-1d-sLY" id="G7f-13-Qr9"/>
+                        <outlet property="winnngPercentageLabelOne" destination="7Df-Wz-CO6" id="kSh-p4-HMa"/>
+                        <segue destination="ep8-5J-wGM" kind="show" identifier="goToWhoWonVC" id="0q6-zt-Nty"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -378,8 +405,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chessVCTwo" translatesAutoresizingMaskIntoConstraints="NO" id="td8-eC-YY4">
-                                <rect key="frame" x="-30" y="-30" width="474" height="796"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chessVCTwo" translatesAutoresizingMaskIntoConstraints="NO" id="td8-eC-YY4">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Ue4-yM-TLQ">
                                 <rect key="frame" x="20" y="203" width="374" height="330"/>
@@ -389,7 +416,7 @@
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="52"/>
                                         <state key="normal" title="Dale"/>
                                         <connections>
-                                            <segue destination="sqt-Vs-wYj" kind="unwind" unwindAction="unwindToSelectedGameVC:" id="6zi-o5-Uk7"/>
+                                            <action selector="playerOneButton:" destination="ep8-5J-wGM" eventType="touchUpInside" id="Dic-L9-xBq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbb-gf-QuV" customClass="CustomButtonView" customModule="ScoreTracker" customModuleProvider="target">
@@ -397,7 +424,7 @@
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="52"/>
                                         <state key="normal" title="Lewis"/>
                                         <connections>
-                                            <segue destination="sqt-Vs-wYj" kind="unwind" unwindAction="unwindToSelectedGameVC:" id="JH7-qq-jXl"/>
+                                            <action selector="playerTwoButton:" destination="ep8-5J-wGM" eventType="touchUpInside" id="Vpa-At-Zzl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qf6-KG-jFO" customClass="CustomButtonView" customModule="ScoreTracker" customModuleProvider="target">
@@ -405,13 +432,13 @@
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="52"/>
                                         <state key="normal" title="Draw"/>
                                         <connections>
-                                            <segue destination="sqt-Vs-wYj" kind="unwind" unwindAction="unwindToSelectedGameVC:" id="pXC-7U-SKs"/>
+                                            <action selector="drawButton:" destination="ep8-5J-wGM" eventType="touchUpInside" id="UDo-SO-C8B"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who Won" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Keg-m2-I49" customClass="CustomLabelFile" customModule="ScoreTracker" customModuleProvider="target">
-                                <rect key="frame" x="80" y="44.999999999999993" width="254" height="68.333333333333314"/>
+                                <rect key="frame" x="80" y="89" width="254" height="68.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="254" id="Qub-Ua-qzG"/>
                                 </constraints>
@@ -422,17 +449,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="td8-eC-YY4" firstAttribute="top" secondItem="MKT-QM-Odt" secondAttribute="top" constant="-30" id="40T-Fm-8WB"/>
+                            <constraint firstItem="td8-eC-YY4" firstAttribute="top" secondItem="MKT-QM-Odt" secondAttribute="top" id="40T-Fm-8WB"/>
                             <constraint firstItem="Keg-m2-I49" firstAttribute="centerX" secondItem="Ue4-yM-TLQ" secondAttribute="centerX" id="8s7-9H-Uru"/>
                             <constraint firstItem="Keg-m2-I49" firstAttribute="top" secondItem="1to-uH-YFZ" secondAttribute="top" constant="25" id="Bhl-5I-uKn"/>
                             <constraint firstItem="Ue4-yM-TLQ" firstAttribute="leading" secondItem="1to-uH-YFZ" secondAttribute="leading" constant="20" id="EmY-Xr-TXs"/>
                             <constraint firstItem="Ue4-yM-TLQ" firstAttribute="centerX" secondItem="MKT-QM-Odt" secondAttribute="centerX" id="K0a-Th-58Q"/>
                             <constraint firstItem="td8-eC-YY4" firstAttribute="centerY" secondItem="MKT-QM-Odt" secondAttribute="centerY" id="PVn-w4-MRP"/>
-                            <constraint firstItem="td8-eC-YY4" firstAttribute="leading" secondItem="MKT-QM-Odt" secondAttribute="leading" constant="-30" id="Sdx-AU-Rvx"/>
+                            <constraint firstItem="td8-eC-YY4" firstAttribute="leading" secondItem="MKT-QM-Odt" secondAttribute="leading" id="Sdx-AU-Rvx"/>
                             <constraint firstItem="Ue4-yM-TLQ" firstAttribute="centerY" secondItem="MKT-QM-Odt" secondAttribute="centerY" id="oqf-di-FjU"/>
                             <constraint firstItem="1to-uH-YFZ" firstAttribute="trailing" secondItem="Ue4-yM-TLQ" secondAttribute="trailing" constant="20" id="qoP-Uj-UiU"/>
-                            <constraint firstItem="td8-eC-YY4" firstAttribute="bottom" secondItem="MKT-QM-Odt" secondAttribute="bottom" constant="30" id="rb3-mN-Q9p"/>
-                            <constraint firstAttribute="trailing" secondItem="td8-eC-YY4" secondAttribute="trailing" constant="-30" id="soL-yl-KEP"/>
+                            <constraint firstItem="td8-eC-YY4" firstAttribute="bottom" secondItem="MKT-QM-Odt" secondAttribute="bottom" id="rb3-mN-Q9p"/>
+                            <constraint firstAttribute="trailing" secondItem="td8-eC-YY4" secondAttribute="trailing" id="soL-yl-KEP"/>
                             <constraint firstAttribute="centerX" secondItem="td8-eC-YY4" secondAttribute="centerX" id="zp2-ia-kg3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1to-uH-YFZ"/>
@@ -440,12 +467,15 @@
                     <navigationItem key="navigationItem" id="GuI-1k-1Mg"/>
                     <connections>
                         <outlet property="backgroundImageOutlet" destination="td8-eC-YY4" id="9il-kO-YrK"/>
+                        <outlet property="drawButtonLabel" destination="qf6-KG-jFO" id="oZL-Y9-3iC"/>
+                        <outlet property="playerOneWonLabel" destination="7k9-VJ-d2T" id="Hig-R6-WEy"/>
+                        <outlet property="playerTwoWonLabel" destination="gbb-gf-QuV" id="bjt-t3-mYy"/>
+                        <outlet property="whoWonLabel" destination="Keg-m2-I49" id="J4f-Sj-y79"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLA-tM-5Og" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="sqt-Vs-wYj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1493" y="24"/>
+            <point key="canvasLocation" x="1492.753623188406" y="23.64130434782609"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G9r-eY-WLA">

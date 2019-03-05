@@ -9,4 +9,7 @@
 import Foundation
 
 let GO_TO_CHOOSE_GAME_VC = "goToChooseGameVC"
-let UNWIND_TO_WELCOMESCREENVC = "unwindToWelcomeScreenVC"
+let UNWIND_TO_WELCOMESCREEN_VC = "unwindToWelcomeScreenVC"
+let GO_TO_SELECTED_GAME_VC = "goToSelectedGameVC"
+let GO_TO_WHO_WON_VC = "goToWhoWonVC"
+let UNWIND_TO_WHO_WON_VC = "unwindToSelectedGameVC"
