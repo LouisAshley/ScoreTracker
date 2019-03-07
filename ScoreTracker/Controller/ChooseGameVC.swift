@@ -13,7 +13,9 @@ class ChooseGameVC: UITableViewController {
     //MARK:- Outlets, Constants & Variables
     
     //Constants
-    let gameTypeArray = ChosenGame().game
+    var gameTypeArray = [String]()
+    let user = Auth.auth().currentUser
+    
     //Variables
    
 
@@ -21,6 +23,17 @@ class ChooseGameVC: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let games = ChosenGame()
+        gameTypeArray = [games.chess, games.pool, games.tennis]
+        Firestore.firestore().collection(USER_DETAILS_REF).document((user?.email)!).collection(USER_GAMES).addDocument(data: [
+            "gameOne" : games.chess,
+            "gameTwo" : games.pool,
+            "gameThree" : games.tennis
+            ])
+    }
+    
 
     //MARK: - TableView & SwipeTableView delegate methods
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

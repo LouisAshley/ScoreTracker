@@ -74,19 +74,27 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYv-MR-gIT">
-                                <rect key="frame" x="184" y="391" width="46" height="30"/>
+                                <rect key="frame" x="179" y="391" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="registerButtonPressed:" destination="YBV-E9-cQH" eventType="touchUpInside" id="Hfs-ft-umV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Please enter a valid email address!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5x8-pd-cgm">
+                                <rect key="frame" x="73" y="429" width="268" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.05677406258" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="aHH-hn-lWH"/>
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="1l3-iK-vt0" id="2rg-cI-snh"/>
+                        <outlet property="invalidEmailAlertLabel" destination="5x8-pd-cgm" id="71a-XV-7cB"/>
                         <outlet property="passwordTextField" destination="HXD-Me-umo" id="mN7-L0-pcv"/>
                         <outlet property="registerButtonOutlet" destination="XYv-MR-gIT" id="gJS-bw-uT1"/>
                         <segue destination="JkD-yn-Ej6" kind="show" identifier="goToChooseGameVC" id="3qX-Us-EdT"/>
@@ -94,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2yf-nM-ssV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1871" y="-424"/>
+            <point key="canvasLocation" x="-1871.0144927536232" y="-424.72826086956525"/>
         </scene>
         <!--Choose Game-->
         <scene sceneID="coU-Um-G01">
@@ -199,13 +207,20 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQk-t4-Q9H">
-                                <rect key="frame" x="184" y="402" width="46" height="30"/>
+                                <rect key="frame" x="188" y="402" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="logInButtonPressed:" destination="dD8-j4-Jk3" eventType="touchUpInside" id="0s8-89-AqH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login details incorrect!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K0-iu-6dd">
+                                <rect key="frame" x="102" y="440" width="209" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.05677406258" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="KDx-cA-Olk"/>
@@ -213,13 +228,14 @@
                     <connections>
                         <outlet property="emailTextField" destination="dKX-vF-UIL" id="sDD-sv-pGg"/>
                         <outlet property="logInButtonOutlet" destination="VQk-t4-Q9H" id="Il8-Zk-8Hl"/>
+                        <outlet property="loginDetailsIncorrectLabel" destination="8K0-iu-6dd" id="cXH-Cv-iLq"/>
                         <outlet property="passwordTextField" destination="kwg-OW-MEu" id="1QB-hn-c0g"/>
                         <segue destination="JkD-yn-Ej6" kind="show" identifier="goToChooseGameVC" id="5eZ-JU-9bL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ao6-Xd-Six" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1871" y="421"/>
+            <point key="canvasLocation" x="-1871.0144927536232" y="420.6521739130435"/>
         </scene>
         <!--Selected GameVC-->
         <scene sceneID="tne-QT-ifu">
@@ -330,7 +346,7 @@
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Add New Victory"/>
                                         <connections>
-                                            <action selector="addNewVictoryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KiQ-u6-M8q"/>
+                                            <segue destination="ep8-5J-wGM" kind="show" identifier="goToWhoWonVC" id="lej-bd-QiS"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -390,7 +406,6 @@
                         <outlet property="totalGamesPlayedLabel" destination="d6h-hN-P5H" id="yt6-Ht-out"/>
                         <outlet property="winningPercentageLabelTwo" destination="YwZ-1d-sLY" id="G7f-13-Qr9"/>
                         <outlet property="winnngPercentageLabelOne" destination="7Df-Wz-CO6" id="kSh-p4-HMa"/>
-                        <segue destination="ep8-5J-wGM" kind="show" identifier="goToWhoWonVC" id="0q6-zt-Nty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -417,6 +432,7 @@
                                         <state key="normal" title="Dale"/>
                                         <connections>
                                             <action selector="playerOneButton:" destination="ep8-5J-wGM" eventType="touchUpInside" id="Dic-L9-xBq"/>
+                                            <segue destination="W28-f3-9Xs" kind="unwind" identifier="" unwindAction="unwindToSelectedGameVC:" id="AjV-0I-tOq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbb-gf-QuV" customClass="CustomButtonView" customModule="ScoreTracker" customModuleProvider="target">
@@ -425,6 +441,7 @@
                                         <state key="normal" title="Lewis"/>
                                         <connections>
                                             <action selector="playerTwoButton:" destination="ep8-5J-wGM" eventType="touchUpInside" id="Vpa-At-Zzl"/>
+                                            <segue destination="W28-f3-9Xs" kind="unwind" identifier="" unwindAction="unwindToSelectedGameVC:" id="W8x-My-N0l"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qf6-KG-jFO" customClass="CustomButtonView" customModule="ScoreTracker" customModuleProvider="target">
@@ -433,6 +450,7 @@
                                         <state key="normal" title="Draw"/>
                                         <connections>
                                             <action selector="drawButton:" destination="ep8-5J-wGM" eventType="touchUpInside" id="UDo-SO-C8B"/>
+                                            <segue destination="W28-f3-9Xs" kind="unwind" identifier="" unwindAction="unwindToSelectedGameVC:" id="Qtc-cQ-nwF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -474,6 +492,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LLA-tM-5Og" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="W28-f3-9Xs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1492.753623188406" y="23.64130434782609"/>
         </scene>

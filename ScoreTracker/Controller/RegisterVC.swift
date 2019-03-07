@@ -15,6 +15,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var registerButtonOutlet: UIButton!
+    @IBOutlet weak var invalidEmailAlertLabel: UILabel!
     
     // Constants
     
@@ -24,6 +25,7 @@ class RegisterVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        invalidEmailAlertLabel.isHidden = true
     }
     
     
@@ -39,9 +41,21 @@ class RegisterVC: UIViewController {
             Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!) { (user, error) in
                 if error != nil {
                     print(error!)
+                    self.view.endEditing(true)
                     SVProgressHUD.dismiss()
+                    self.invalidEmailAlertLabel.isHidden = false
                 } else {
-                    print("Registration Successful")
+                    guard let inputtedName = textFieldString.text else { return }
+                    Firestore.firestore().collection(USER_DETAILS_REF).document(self.emailTextField.text!).setData([
+                        USER_EMAIL : self.emailTextField.text!,
+                        USER_NAME : inputtedName
+                    ]) { (error) in
+                        if let error = error {
+                            print("error adding username document \(error)")
+                        } else {
+                            print("successfully added username document")
+                        }
+                    }
                     nickName = textFieldString.text!
                     self.performSegue(withIdentifier: GO_TO_CHOOSE_GAME_VC, sender: self)
                     SVProgressHUD.dismiss()
@@ -55,7 +69,6 @@ class RegisterVC: UIViewController {
         }
         present(alert, animated: true)
     }
-    
     
     
     

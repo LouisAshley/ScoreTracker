@@ -9,13 +9,13 @@
 import Foundation
 
 
-    var scoreOne = 0.0
-    var scoreTwo = 0.0
-    var currentChampion = ""
-    var totalGamesPlayed = 0.0
-    var scoreOneWinPercentage = 0.0
-    var scoreTwoWinPercentage = 0.0
-    var draws = 0.0
-    var drawPercentage = 0.0
-    var lastWinner = ""
+var scoreOne = 0.0
+var scoreTwo = 0.0
+var draws = 0.0
+var scoreOneWinPercentage = 0.0
+var scoreTwoWinPercentage = 0.0
+var drawsPercentage = 0.0
+var totalGamesPlayed = 0.0
+var currentChampion = ""
+var lastWinner = ""
 

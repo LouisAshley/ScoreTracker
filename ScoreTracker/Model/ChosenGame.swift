@@ -10,6 +10,8 @@ import Foundation
 
 class ChosenGame {
     
-    var game = ["Chess", "Pool"]
+    let chess: String = "Chess"
+    let pool: String = "Pool"
+    let tennis: String = "Tennis"
     
 }

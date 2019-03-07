@@ -8,5 +8,8 @@
 
 import Foundation
 
+let email = ""
 var nickName = ""
+
+
 

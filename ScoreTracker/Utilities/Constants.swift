@@ -13,3 +13,9 @@ let UNWIND_TO_WELCOMESCREEN_VC = "unwindToWelcomeScreenVC"
 let GO_TO_SELECTED_GAME_VC = "goToSelectedGameVC"
 let GO_TO_WHO_WON_VC = "goToWhoWonVC"
 let UNWIND_TO_WHO_WON_VC = "unwindToSelectedGameVC"
+
+
+let USER_DETAILS_REF = "userDetails"
+let USER_NAME = "username"
+let USER_EMAIL = "userEmail"
+let USER_GAMES = "userGames"

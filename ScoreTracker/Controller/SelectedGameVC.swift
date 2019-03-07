@@ -65,7 +65,7 @@ class SelectedGameVC: UIViewController {
         drawLabel.text = "Draws: \(Int(draws))"
         winnngPercentageLabelOne.text = "Winning Percentage: \n\(Int(scoreOneWinPercentage))%"
         winningPercentageLabelTwo.text = "Winning percentage: \n\(Int(scoreTwoWinPercentage))%"
-        drawPercentageLabel.text = "Draw Percentage: \(Int(drawPercentage))%"
+        drawPercentageLabel.text = "Draw Percentage: \(Int(drawsPercentage))%"
         currentChampionLabel.text = "Current Champion: \(currentChampion)"
         totalGamesPlayedLabel.text = "Games Played: \(Int(totalGamesPlayed))"
         lastWinnerLabel.text = "Last Winner: \(lastWinner)"
@@ -95,7 +95,7 @@ class SelectedGameVC: UIViewController {
     }
     
     @IBAction func addNewVictoryButton(_ sender: UIButton) {
-            performSegue(withIdentifier: GO_TO_WHO_WON_VC, sender: self)
+            
     }
     
     @IBAction func unwindToSelectedGameVC(_ sender: UIStoryboardSegue) {}

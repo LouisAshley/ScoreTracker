@@ -6,12 +6,12 @@ target 'ScoreTracker' do
   use_frameworks!
 
   # Pods for ScoreTracker
-  pod 'RealmSwift'
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
   pod 'SVProgressHUD'
-  
+
 end
 
   post_install do |installer|

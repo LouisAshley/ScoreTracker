@@ -15,6 +15,7 @@ class LogInVC: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var logInButtonOutlet: UIButton!
+    @IBOutlet weak var loginDetailsIncorrectLabel: UILabel!
     
     // Constants
     
@@ -23,6 +24,7 @@ class LogInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginDetailsIncorrectLabel.isHidden = true
 
 
     }
@@ -33,8 +35,13 @@ class LogInVC: UIViewController {
         SVProgressHUD.show()
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (userDetail, error) in
             if error != nil {
+                 print(error!)
+                self.view.endEditing(true)
                 SVProgressHUD.dismiss()
-                print(error!)
+                self.loginDetailsIncorrectLabel.isHidden = false
+                
+                
+               
             } else {
                 print("Logged In Successfully")
                 SVProgressHUD.dismiss()
