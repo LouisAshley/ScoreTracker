@@ -48,8 +48,8 @@ class RegisterVC: UIViewController {
                     guard let inputtedName = textFieldString.text else { return }
                     Firestore.firestore().collection(USER_DETAILS_REF).document(self.emailTextField.text!).setData([
                         USER_EMAIL : self.emailTextField.text!,
-                        USER_NAME : inputtedName
-                    ]) { (error) in
+                        USER_NAME : inputtedName], merge: true)
+                    { (error) in
                         if let error = error {
                             print("error adding username document \(error)")
                         } else {

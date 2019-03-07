@@ -14,7 +14,7 @@ class SelectMatchVC: UITableViewController {
     //MARK:- Outlets, Constants & Variables
     
     // Constants
-
+    let user = Auth.auth().currentUser
     // Variables
     var selectedMatch: String? {
         didSet {
