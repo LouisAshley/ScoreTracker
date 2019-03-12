@@ -162,9 +162,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goToSelectedGameVC" id="LuJ-vy-4p0"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -179,6 +176,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSelectedGameVC" id="1B8-rC-fHm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CjQ-9s-0d6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -245,7 +245,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chess5" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-5o-gDv" userLabel="chessIMG">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gT4-5o-gDv" userLabel="chessIMG">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Champion:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n4r-yg-yzk" customClass="CustomLabelFile" customModule="ScoreTracker" customModuleProvider="target">
@@ -420,7 +420,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chessVCTwo" translatesAutoresizingMaskIntoConstraints="NO" id="td8-eC-YY4">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="td8-eC-YY4">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Ue4-yM-TLQ">
@@ -484,7 +484,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GuI-1k-1Mg"/>
                     <connections>
-                        <outlet property="backgroundImageOutlet" destination="td8-eC-YY4" id="9il-kO-YrK"/>
+                        <outlet property="backgroundImage" destination="td8-eC-YY4" id="soK-4V-dHf"/>
                         <outlet property="drawButtonLabel" destination="qf6-KG-jFO" id="oZL-Y9-3iC"/>
                         <outlet property="playerOneWonLabel" destination="7k9-VJ-d2T" id="Hig-R6-WEy"/>
                         <outlet property="playerTwoWonLabel" destination="gbb-gf-QuV" id="bjt-t3-mYy"/>
@@ -515,10 +515,6 @@
             <point key="canvasLocation" x="-3736" y="25"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="chess5" width="845" height="515"/>
-        <image name="chessVCTwo" width="460.79998779296875" height="307.20001220703125"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3qX-Us-EdT"/>
     </inferredMetricsTieBreakers>

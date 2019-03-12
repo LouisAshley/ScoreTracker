@@ -24,9 +24,9 @@ class PertentageCalc {
     }
     
     func calculatePercentage() -> (Double, Double, Double) {
-        let scoreOnePercentage = scoreOne / totalGames * 100
-        let scoreTwoPercentage = scoreTwo / totalGames * 100
-        let drawPercentage = draws / totalGames * 100
+        let scoreOnePercentage = (scoreOne / totalGames) * 100
+        let scoreTwoPercentage = (scoreTwo / totalGames) * 100
+        let drawPercentage = (draws / totalGames) * 100
         return (scoreOnePercentage, scoreTwoPercentage, drawPercentage)
     }
     

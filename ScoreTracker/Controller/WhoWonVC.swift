@@ -7,27 +7,26 @@
 //
 
 import UIKit
-
+import Firebase
 
 class WhoWonVC: UIViewController {
     //MARK:- Variables, Constants & Outlets
     //Outlets
-    @IBOutlet weak var backgroundImageOutlet: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var whoWonLabel: UILabel!
     @IBOutlet weak var playerOneWonLabel: UIButton!
     @IBOutlet weak var playerTwoWonLabel: UIButton!
     @IBOutlet weak var drawButtonLabel: UIButton!
     
     // Constants
-    
+    let user = Auth.auth().currentUser?.email
     // Variables
+    var nickNameRef: DocumentReference!
     var opponentsName: String?
+    var selectedMatch: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLabels()
-        //        let parallaxingEffect = ParallaxEffect()
-        //        parallaxingEffect.setUpParallax(background: backgroundImageOutlet)
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
         view.addGestureRecognizer(tap)
         navigationItem.title = "Who Won?"
@@ -36,6 +35,8 @@ class WhoWonVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
+        setBackground()
+        setLabels()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -43,32 +44,31 @@ class WhoWonVC: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    
     //MARK:- Segueways functions
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let unwindDestination = segue.destination as! SelectedGameVC
-        print("entered prepare")
-        totalGamesPlayed += 1.0
-        whatButtonWasPressed(sender: sender as! UIButton)
-        unwindDestination.scoreLabelOne.text = "\(nickName): \n\(Int(scoreOne))"
-        unwindDestination.scoreLabelTwo.text = "\(opponentsName!): \n\(Int(scoreTwo))"
-        unwindDestination.winnngPercentageLabelOne.text = "Winning Percentage: \n\(Int(scoreOneWinPercentage))%"
-        unwindDestination.winningPercentageLabelTwo.text = "Winning Percentage: \n\(Int(scoreTwoWinPercentage))%"
-        unwindDestination.drawLabel.text = "Draws: \(Int(draws))"
-        unwindDestination.drawPercentageLabel.text = "Draw Percentage: \(Int(drawsPercentage))%"
-        unwindDestination.currentChampionLabel.text = "Current Champion: \(currentChampion)"
-        unwindDestination.lastWinnerLabel.text = "Last Winner: \(lastWinner)"
-        unwindDestination.totalGamesPlayedLabel.text = "Games Played: \(Int(totalGamesPlayed))"
+        whatButtonWasPressed(sender: sender as! UIButton, vc: unwindDestination)
+        saveScoreData(selectedGame: unwindDestination)
     }
     
-    
     //MARK:- functions
- 
     func setLabels() {
         playerOneWonLabel.setTitle(nickName, for: .normal)
         playerTwoWonLabel.setTitle("\(opponentsName!)", for: .normal)
         drawButtonLabel.setTitle("Draw", for: .normal)
+    }
+    
+    func setBackground() {
+        switch selectedMatch { 
+        case "Chess":
+            backgroundImage.image = UIImage(named: CHESSTWO)
+        case "Pool":
+            backgroundImage.image = UIImage(named: POOLTWO)
+        case "Tennis":
+            backgroundImage.image = UIImage(named: TENNISTWO)
+        default:
+            return
+        }
     }
     
     //MARK:- Add tap gestures to the display
@@ -82,25 +82,25 @@ class WhoWonVC: UIViewController {
         }
     }
     
-    func whatButtonWasPressed(sender: UIButton) {
+    func whatButtonWasPressed(sender: UIButton, vc: SelectedGameVC) {
         switch sender.tag {
         case 2:
-        playerOneAddStats()
+            playerOneAddStats(selectedGame: vc)
         case 3:
-        playerTwoAddStats()
+            playerTwoAddStats(selectedGame: vc)
         case 4:
-        drawAddStats()
+            drawAddStats(selectedGame: vc)
         default:
-        return
+            return
         }
     }
     
-    func playerOneAddStats() {
+    func playerOneAddStats(selectedGame: SelectedGameVC) {
+        totalGamesPlayed += 1
         scoreOne += 1
         lastWinner = nickName
         let calculateScoreOnePercentage = PertentageCalc(scoreOne: scoreOne, scoreTwo: scoreTwo, draws: draws, totalGames: totalGamesPlayed).calculatePercentage()
         (scoreOneWinPercentage, scoreTwoWinPercentage, drawsPercentage) = calculateScoreOnePercentage
-        
         if scoreOne > scoreTwo {
             currentChampion = nickName
         } else if scoreOne == scoreTwo {
@@ -108,29 +108,45 @@ class WhoWonVC: UIViewController {
         }
     }
     
-    func playerTwoAddStats() {
+    func playerTwoAddStats(selectedGame: SelectedGameVC) {
+        totalGamesPlayed += 1
         scoreTwo += 1
         lastWinner = "\(opponentsName!)"
         let calculateScoreTwoPercentage = PertentageCalc(scoreOne: scoreOne, scoreTwo: scoreTwo, draws: draws, totalGames: totalGamesPlayed).calculatePercentage()
         (scoreOneWinPercentage, scoreTwoWinPercentage, drawsPercentage) = calculateScoreTwoPercentage
         if scoreTwo > scoreOne {
             currentChampion = opponentsName!
-        } else if scoreTwo ==  scoreOne {
+        } else if scoreTwo > scoreOne {
             currentChampion = "Draw"
         }
     }
     
-    func drawAddStats() {
+    func drawAddStats(selectedGame: SelectedGameVC) {
+        totalGamesPlayed += 1
         draws += 1
         lastWinner = "Draw"
         let calculateDraws = PertentageCalc(scoreOne: scoreOne, scoreTwo: scoreTwo, draws: draws, totalGames: totalGamesPlayed).calculatePercentage()
         (scoreOneWinPercentage, scoreTwoWinPercentage, drawsPercentage) = calculateDraws
     }
     
+    //MARK:- Load and save functions
+    func saveScoreData(selectedGame: SelectedGameVC) {
+        Firestore.firestore().collection(selectedMatch!).document(user!).collection("opponents").document("\(self.opponentsName!)").setData([
+            "scoreOne" : scoreOne,
+            "scoreTwo" : scoreTwo,
+            "scoreOneWinPercentage" : scoreOneWinPercentage,
+            "scoreTwoWinPercentage" : scoreTwoWinPercentage,
+            "draws" : draws,
+            "drawPercentage" : drawsPercentage,
+            "totalGamesPlayed" : totalGamesPlayed,
+            "lastWinner" : lastWinner,
+            "currentChampion" : currentChampion
+            ], merge: true)
+    }
     
     //MARK:- IBActions/button pressed
     @IBAction func playerOneButton(_ sender: UIButton) {
-    
+        
     }
     
     @IBAction func playerTwoButton(_ sender: UIButton) {

@@ -8,7 +8,4 @@
 
 import Foundation
 
-    let chess: String = "Chess"
-    let pool: String = "Pool"
-    let tennis: String = "Tennis"
     let gameTypeArray = ["Chess", "Pool", "Tennis"]

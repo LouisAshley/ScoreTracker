@@ -20,3 +20,11 @@ let USER_NAME = "username"
 let USER_EMAIL = "userEmail"
 let USER_GAMES = "userGames"
 let OPPONENTS = "opponents"
+
+
+let POOL = "poolVC"
+let POOLTWO = "poolVCTwo"
+let CHESS = "chessVC"
+let CHESSTWO = "chessVCTwo"
+let TENNIS = "tennisVC"
+let TENNISTWO = "tennisVCTwo"

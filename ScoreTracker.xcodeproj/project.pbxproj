@@ -12,7 +12,6 @@
 		F66649B42205B6250003D116 /* SelectedGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649B32205B6250003D116 /* SelectedGameVC.swift */; };
 		F66649B72205B6250003D116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66649B52205B6250003D116 /* Main.storyboard */; };
 		F66649BC2205B6260003D116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66649BA2205B6260003D116 /* LaunchScreen.storyboard */; };
-		F66649C62205BB6C0003D116 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F66649C52205BB6C0003D116 /* Assets.xcassets */; };
 		F66649C82205C3B90003D116 /* WhoWonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649C72205C3B90003D116 /* WhoWonVC.swift */; };
 		F66CC08B222D401100714C72 /* WelcomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC08A222D401100714C72 /* WelcomeScreenVC.swift */; };
 		F66CC08D222D401E00714C72 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC08C222D401E00714C72 /* LogInVC.swift */; };
@@ -24,11 +23,12 @@
 		F68933A7220C677C00858BB1 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68933A6220C677C00858BB1 /* CustomButtonView.swift */; };
 		F693458A222D540B008820B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6934589222D540A008820B3 /* GoogleService-Info.plist */; };
 		F6987E85220DF04F0062CBEE /* ParallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */; };
+		F69E7E3B2236F86D004C4960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F69E7E3A2236F86D004C4960 /* Assets.xcassets */; };
 		F6CF9B2F220CA81A00774FED /* PercentageCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */; };
 		F6E20811222DAC7600E94941 /* ChosenGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20810222DAC7600E94941 /* ChosenGame.swift */; };
 		F6E20813222DAC8700E94941 /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20812222DAC8700E94941 /* ScoreData.swift */; };
-		F6E20815222DACA800E94941 /* Matches.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20814222DACA800E94941 /* Matches.swift */; };
 		F6E20817222DADDF00E94941 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20816222DADDF00E94941 /* PlayerDetails.swift */; };
+		F6FF92152233E57500785745 /* DownloadScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF92142233E57500785745 /* DownloadScores.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,6 @@
 		F66649B62205B6250003D116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F66649BB2205B6260003D116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F66649BD2205B6260003D116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F66649C52205BB6C0003D116 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F66649C72205C3B90003D116 /* WhoWonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoWonVC.swift; sourceTree = "<group>"; };
 		F66CC08A222D401100714C72 /* WelcomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVC.swift; sourceTree = "<group>"; };
 		F66CC08C222D401E00714C72 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
@@ -52,11 +51,12 @@
 		F68933A6220C677C00858BB1 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		F6934589222D540A008820B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxEffect.swift; sourceTree = "<group>"; };
+		F69E7E3A2236F86D004C4960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCalc.swift; sourceTree = "<group>"; };
 		F6E20810222DAC7600E94941 /* ChosenGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenGame.swift; sourceTree = "<group>"; };
 		F6E20812222DAC8700E94941 /* ScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
-		F6E20814222DACA800E94941 /* Matches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matches.swift; sourceTree = "<group>"; };
 		F6E20816222DADDF00E94941 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
+		F6FF92142233E57500785745 /* DownloadScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadScores.swift; sourceTree = "<group>"; };
 		F93F831D4AE02B5279DB878C /* Pods-ScoreTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreTracker.release.xcconfig"; path = "Target Support Files/Pods-ScoreTracker/Pods-ScoreTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,7 +136,7 @@
 				F68933A6220C677C00858BB1 /* CustomButtonView.swift */,
 				F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */,
 				F66649BA2205B6260003D116 /* LaunchScreen.storyboard */,
-				F66649C52205BB6C0003D116 /* Assets.xcassets */,
+				F69E7E3A2236F86D004C4960 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,9 +160,9 @@
 			children = (
 				F6E20816222DADDF00E94941 /* PlayerDetails.swift */,
 				F6E20810222DAC7600E94941 /* ChosenGame.swift */,
-				F6E20814222DACA800E94941 /* Matches.swift */,
 				F6E20812222DAC8700E94941 /* ScoreData.swift */,
 				F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */,
+				F6FF92142233E57500785745 /* DownloadScores.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,7 +238,7 @@
 			files = (
 				F66649BC2205B6260003D116 /* LaunchScreen.storyboard in Resources */,
 				F693458A222D540B008820B3 /* GoogleService-Info.plist in Resources */,
-				F66649C62205BB6C0003D116 /* Assets.xcassets in Resources */,
+				F69E7E3B2236F86D004C4960 /* Assets.xcassets in Resources */,
 				F66649B72205B6250003D116 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6FF92152233E57500785745 /* DownloadScores.swift in Sources */,
 				F6E20813222DAC8700E94941 /* ScoreData.swift in Sources */,
 				F6CF9B2F220CA81A00774FED /* PercentageCalc.swift in Sources */,
 				F66CC08F222D402E00714C72 /* RegisterVC.swift in Sources */,
@@ -327,7 +328,6 @@
 				F66CC08B222D401100714C72 /* WelcomeScreenVC.swift in Sources */,
 				F6E20811222DAC7600E94941 /* ChosenGame.swift in Sources */,
 				F66649C82205C3B90003D116 /* WhoWonVC.swift in Sources */,
-				F6E20815222DACA800E94941 /* Matches.swift in Sources */,
 				F66CC093222D410A00714C72 /* SelectMatchVC.swift in Sources */,
 				F68933A5220C672700858BB1 /* CustomLabelFile.swift in Sources */,
 			);

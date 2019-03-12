@@ -14,8 +14,6 @@ class ChooseGameVC: UITableViewController {
     
     //Constants
     
-    let user = Auth.auth().currentUser
-    
     //Variables
    
 
@@ -54,9 +52,6 @@ class ChooseGameVC: UITableViewController {
         }
     }
     
-
-
-    
     //MARK:- IBActions/Button Pressed
     @IBAction func logOutButtonPressed(_ sender: UIBarButtonItem) {
         do {
@@ -67,14 +62,5 @@ class ChooseGameVC: UITableViewController {
             print("Error Logging Out")
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }
