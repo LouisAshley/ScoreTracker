@@ -27,25 +27,24 @@ class SelectedGameVC: UIViewController {
     @IBOutlet weak var gameNameLabel: UILabel!
     
     // Constants
-    let user = Auth.auth().currentUser?.email
+    let user = Auth.auth().currentUser?.uid
     //Variables
-    var nickNameRef: DocumentReference!
     var selectedMatch: String?
     var opponentsName: String?
-    
+    var username: String?
     //MARK:- Views loaded
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
-        view.addGestureRecognizer(tap)
-        navigationItem.title = selectedMatch
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: false)
         setLabels()
         setBackground()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+        view.addGestureRecognizer(tap)
+        navigationItem.title = selectedMatch
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -55,8 +54,9 @@ class SelectedGameVC: UIViewController {
     
     //MARK:- Set up game labels and buttons functions
     func setLabels() {
-        scoreLabelOne.text = "\(nickName): \n\(scoreOne)"
-        scoreLabelTwo.text = "\(opponentsName!): \n\(scoreTwo)"
+        guard let username = username else { return }
+        scoreLabelOne.text = "\(username): \n\(Int(scoreOne))"
+        scoreLabelTwo.text = "\(opponentsName!): \n\(Int(scoreTwo))"
         drawLabel.text = "Draws: \(Int(draws))"
         winnngPercentageLabelOne.text = "Winning Percentage: \n\(Int(scoreOneWinPercentage))%"
         winningPercentageLabelTwo.text = "Winning percentage: \n\(Int(scoreTwoWinPercentage))%"
@@ -80,23 +80,6 @@ class SelectedGameVC: UIViewController {
         }
     }
     
-    
-    
-    //MARK:- Load scores
-    func saveScoreData() {
-        Firestore.firestore().collection(selectedMatch!).document(user!).collection("opponents").document("\(self.opponentsName!)").setData([
-            "scoreOne" : scoreOne,
-            "scoreTwo" : scoreTwo,
-            "scoreOneWinPercentage" : scoreOneWinPercentage,
-            "scoreTwoWinPercentage" : scoreTwoWinPercentage,
-            "draws" : draws,
-            "drawPercentage" : drawsPercentage,
-            "totalGamesPlayed" : totalGamesPlayed,
-            "lastWinner" : lastWinner,
-            "currentChampion" : currentChampion
-            ], merge: true)
-    }
-    
     //MARK:- Set up tapGuestures
     @objc func handleTap() {
         if navigationController?.navigationBar.isHidden == true {
@@ -114,11 +97,8 @@ class SelectedGameVC: UIViewController {
             let destinationVC = segue.destination as! WhoWonVC
             destinationVC.opponentsName = self.opponentsName
             destinationVC.selectedMatch = selectedMatch
+            destinationVC.username = username
         }
-    }
-    
-    @IBAction func addNewVictoryButton(_ sender: UIButton) {
-        
     }
     
     @IBAction func unwindToSelectedGameVC(_ sender: UIStoryboardSegue) {}

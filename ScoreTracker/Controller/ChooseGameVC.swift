@@ -8,30 +8,39 @@
 
 import UIKit
 import Firebase
+private var handle: AuthStateDidChangeListenerHandle?
 
 class ChooseGameVC: UITableViewController {
     //MARK:- Outlets, Constants & Variables
+    @IBOutlet weak var cellBackgroundImage: UIView!
+    @IBOutlet weak var userDetailsButton: UIBarButtonItem!
     
-    //Constants
     
-    //Variables
-   
-
+    override func viewWillAppear(_ animated: Bool) {
+        handle = Auth.auth().addStateDidChangeListener({ (auth, user) in
+            if user == nil {
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let loginVC = storyBoard.instantiateViewController(withIdentifier: "loginVC")
+                self.present(loginVC, animated: true, completion: nil)
+            }
+        })
+       }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: false)
+        tableView.rowHeight = 80
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-       
-    }
-    
 
     //MARK: - TableView & SwipeTableView delegate methods
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "gameTypeCell", for: indexPath)
-        cell.textLabel?.text = gameTypeArray[indexPath.row]
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "gameTypeCell", for: indexPath) as? CustomCell {
+        cell.configGamesCell(gameType: gameTypeArray[indexPath.row])
+        cell.gameNameText.text = gameTypeArray[indexPath.row]
         return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,11 +65,12 @@ class ChooseGameVC: UITableViewController {
     @IBAction func logOutButtonPressed(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
-            print("Logged Out Successfully")
-            performSegue(withIdentifier: UNWIND_TO_WELCOMESCREEN_VC, sender: nil)
-        } catch {
-            print("Error Logging Out")
+        } catch let signoutError as NSError {
+            debugPrint("Error signing out \(signoutError)")
         }
     }
     
+    @IBAction func userDetailsButtonTapped(_ sender: Any) {
+        
+    }
 }

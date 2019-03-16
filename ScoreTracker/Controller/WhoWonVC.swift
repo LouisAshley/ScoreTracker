@@ -17,20 +17,11 @@ class WhoWonVC: UIViewController {
     @IBOutlet weak var playerOneWonLabel: UIButton!
     @IBOutlet weak var playerTwoWonLabel: UIButton!
     @IBOutlet weak var drawButtonLabel: UIButton!
-    
-    // Constants
-    let user = Auth.auth().currentUser?.email
+
     // Variables
-    var nickNameRef: DocumentReference!
+    var username: String?
     var opponentsName: String?
     var selectedMatch: String?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
-        view.addGestureRecognizer(tap)
-        navigationItem.title = "Who Won?"
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -39,27 +30,27 @@ class WhoWonVC: UIViewController {
         setLabels()
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+        view.addGestureRecognizer(tap)
+        navigationItem.title = "Who Won?"
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        navigationController?.setNavigationBarHidden(true, animated: false)
+        saveScoreData()
     }
-    
-    //MARK:- Segueways functions
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let unwindDestination = segue.destination as! SelectedGameVC
-        whatButtonWasPressed(sender: sender as! UIButton, vc: unwindDestination)
-        saveScoreData(selectedGame: unwindDestination)
-    }
-    
-    //MARK:- functions
     func setLabels() {
-        playerOneWonLabel.setTitle(nickName, for: .normal)
-        playerTwoWonLabel.setTitle("\(opponentsName!)", for: .normal)
+        guard let user = username,
+        let opponent = opponentsName else { return }
+        playerOneWonLabel.setTitle(user, for: .normal)
+        playerTwoWonLabel.setTitle("\(opponent)", for: .normal)
         drawButtonLabel.setTitle("Draw", for: .normal)
     }
     
     func setBackground() {
-        switch selectedMatch { 
+        switch selectedMatch {
         case "Chess":
             backgroundImage.image = UIImage(named: CHESSTWO)
         case "Pool":
@@ -82,46 +73,53 @@ class WhoWonVC: UIViewController {
         }
     }
     
-    func whatButtonWasPressed(sender: UIButton, vc: SelectedGameVC) {
+    //MARK:- Segueways functions
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        whatButtonWasPressed(sender: sender as! UIButton)
+    }
+    
+    func whatButtonWasPressed(sender: UIButton) {
         switch sender.tag {
         case 2:
-            playerOneAddStats(selectedGame: vc)
+            playerOneAddStats()
         case 3:
-            playerTwoAddStats(selectedGame: vc)
+            playerTwoAddStats()
         case 4:
-            drawAddStats(selectedGame: vc)
+            drawAddStats()
         default:
             return
         }
     }
     
-    func playerOneAddStats(selectedGame: SelectedGameVC) {
+    func playerOneAddStats() {
+        guard let user = username else { return }
         totalGamesPlayed += 1
         scoreOne += 1
-        lastWinner = nickName
+        lastWinner = user
         let calculateScoreOnePercentage = PertentageCalc(scoreOne: scoreOne, scoreTwo: scoreTwo, draws: draws, totalGames: totalGamesPlayed).calculatePercentage()
         (scoreOneWinPercentage, scoreTwoWinPercentage, drawsPercentage) = calculateScoreOnePercentage
         if scoreOne > scoreTwo {
-            currentChampion = nickName
+            currentChampion = username!
         } else if scoreOne == scoreTwo {
             currentChampion = "Draw"
         }
     }
     
-    func playerTwoAddStats(selectedGame: SelectedGameVC) {
+    func playerTwoAddStats() {
+        guard let opponent = opponentsName else { return }
         totalGamesPlayed += 1
         scoreTwo += 1
-        lastWinner = "\(opponentsName!)"
+        lastWinner = "\(opponent)"
         let calculateScoreTwoPercentage = PertentageCalc(scoreOne: scoreOne, scoreTwo: scoreTwo, draws: draws, totalGames: totalGamesPlayed).calculatePercentage()
         (scoreOneWinPercentage, scoreTwoWinPercentage, drawsPercentage) = calculateScoreTwoPercentage
         if scoreTwo > scoreOne {
             currentChampion = opponentsName!
-        } else if scoreTwo > scoreOne {
+        } else if scoreTwo == scoreOne {
             currentChampion = "Draw"
         }
     }
     
-    func drawAddStats(selectedGame: SelectedGameVC) {
+    func drawAddStats() {
         totalGamesPlayed += 1
         draws += 1
         lastWinner = "Draw"
@@ -130,8 +128,10 @@ class WhoWonVC: UIViewController {
     }
     
     //MARK:- Load and save functions
-    func saveScoreData(selectedGame: SelectedGameVC) {
-        Firestore.firestore().collection(selectedMatch!).document(user!).collection("opponents").document("\(self.opponentsName!)").setData([
+    func saveScoreData() {
+        guard let user = username,
+        let opponent = opponentsName else { return }
+        Firestore.firestore().collection(selectedMatch!).document(user).collection("opponents").document("\(opponent)").setData([
             "scoreOne" : scoreOne,
             "scoreTwo" : scoreTwo,
             "scoreOneWinPercentage" : scoreOneWinPercentage,
@@ -141,19 +141,7 @@ class WhoWonVC: UIViewController {
             "totalGamesPlayed" : totalGamesPlayed,
             "lastWinner" : lastWinner,
             "currentChampion" : currentChampion
-            ], merge: true)
-    }
-    
-    //MARK:- IBActions/button pressed
-    @IBAction func playerOneButton(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func playerTwoButton(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func drawButton(_ sender: UIButton) {
+            ])
         
     }
     

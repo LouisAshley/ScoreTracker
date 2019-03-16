@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8DF0D58CA099075AA6F3B13B /* Pods_ScoreTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EA189B22E0CCBAA4B3EF94 /* Pods_ScoreTracker.framework */; };
+		F64C3D742239B8F200FAFE73 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C3D732239B8F200FAFE73 /* CustomCell.swift */; };
 		F66649B22205B6250003D116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649B12205B6250003D116 /* AppDelegate.swift */; };
 		F66649B42205B6250003D116 /* SelectedGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649B32205B6250003D116 /* SelectedGameVC.swift */; };
-		F66649B72205B6250003D116 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66649B52205B6250003D116 /* Main.storyboard */; };
 		F66649BC2205B6260003D116 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66649BA2205B6260003D116 /* LaunchScreen.storyboard */; };
 		F66649C82205C3B90003D116 /* WhoWonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649C72205C3B90003D116 /* WhoWonVC.swift */; };
-		F66CC08B222D401100714C72 /* WelcomeScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC08A222D401100714C72 /* WelcomeScreenVC.swift */; };
 		F66CC08D222D401E00714C72 /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC08C222D401E00714C72 /* LogInVC.swift */; };
 		F66CC08F222D402E00714C72 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC08E222D402E00714C72 /* RegisterVC.swift */; };
 		F66CC093222D410A00714C72 /* SelectMatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66CC092222D410A00714C72 /* SelectMatchVC.swift */; };
@@ -21,27 +20,25 @@
 		F685A5AD222D6FD9000A294C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F685A5AC222D6FD9000A294C /* Constants.swift */; };
 		F68933A5220C672700858BB1 /* CustomLabelFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68933A4220C672700858BB1 /* CustomLabelFile.swift */; };
 		F68933A7220C677C00858BB1 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68933A6220C677C00858BB1 /* CustomButtonView.swift */; };
-		F693458A222D540B008820B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6934589222D540A008820B3 /* GoogleService-Info.plist */; };
 		F6987E85220DF04F0062CBEE /* ParallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */; };
 		F69E7E3B2236F86D004C4960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F69E7E3A2236F86D004C4960 /* Assets.xcassets */; };
+		F6A0342C223AF9F30047215C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6A0342B223AF9F30047215C /* GoogleService-Info.plist */; };
 		F6CF9B2F220CA81A00774FED /* PercentageCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */; };
 		F6E20811222DAC7600E94941 /* ChosenGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20810222DAC7600E94941 /* ChosenGame.swift */; };
 		F6E20813222DAC8700E94941 /* ScoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20812222DAC8700E94941 /* ScoreData.swift */; };
-		F6E20817222DADDF00E94941 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20816222DADDF00E94941 /* PlayerDetails.swift */; };
-		F6FF92152233E57500785745 /* DownloadScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6FF92142233E57500785745 /* DownloadScores.swift */; };
+		F6FE61D2223A758000324B25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6FE61D0223A758000324B25 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A6EA189B22E0CCBAA4B3EF94 /* Pods_ScoreTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoreTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D321977FFA599A5A0C88608F /* Pods-ScoreTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreTracker.debug.xcconfig"; path = "Target Support Files/Pods-ScoreTracker/Pods-ScoreTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		F64C3D732239B8F200FAFE73 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F66649AE2205B6250003D116 /* ScoreTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66649B12205B6250003D116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F66649B32205B6250003D116 /* SelectedGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedGameVC.swift; sourceTree = "<group>"; };
-		F66649B62205B6250003D116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F66649BB2205B6260003D116 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F66649BD2205B6260003D116 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66649C72205C3B90003D116 /* WhoWonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhoWonVC.swift; sourceTree = "<group>"; };
-		F66CC08A222D401100714C72 /* WelcomeScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreenVC.swift; sourceTree = "<group>"; };
 		F66CC08C222D401E00714C72 /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		F66CC08E222D402E00714C72 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		F66CC092222D410A00714C72 /* SelectMatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMatchVC.swift; sourceTree = "<group>"; };
@@ -49,14 +46,13 @@
 		F685A5AC222D6FD9000A294C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F68933A4220C672700858BB1 /* CustomLabelFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelFile.swift; sourceTree = "<group>"; };
 		F68933A6220C677C00858BB1 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
-		F6934589222D540A008820B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxEffect.swift; sourceTree = "<group>"; };
 		F69E7E3A2236F86D004C4960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F6A0342B223AF9F30047215C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCalc.swift; sourceTree = "<group>"; };
 		F6E20810222DAC7600E94941 /* ChosenGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenGame.swift; sourceTree = "<group>"; };
 		F6E20812222DAC8700E94941 /* ScoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreData.swift; sourceTree = "<group>"; };
-		F6E20816222DADDF00E94941 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
-		F6FF92142233E57500785745 /* DownloadScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadScores.swift; sourceTree = "<group>"; };
+		F6FE61D1223A758000324B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F93F831D4AE02B5279DB878C /* Pods-ScoreTracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreTracker.release.xcconfig"; path = "Target Support Files/Pods-ScoreTracker/Pods-ScoreTracker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,8 +110,8 @@
 				F68933A1220C65F700858BB1 /* Model */,
 				F689339F220C65DD00858BB1 /* View */,
 				F68933A0220C65EB00858BB1 /* Controller */,
-				F6934586222D52EE008820B3 /* Supporting Files */,
 				F685A5AB222D6FA1000A294C /* Utilities */,
+				F6934586222D52EE008820B3 /* Supporting Files */,
 			);
 			path = ScoreTracker;
 			sourceTree = "<group>";
@@ -131,10 +127,11 @@
 		F689339F220C65DD00858BB1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F66649B52205B6250003D116 /* Main.storyboard */,
 				F68933A4220C672700858BB1 /* CustomLabelFile.swift */,
 				F68933A6220C677C00858BB1 /* CustomButtonView.swift */,
 				F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */,
+				F64C3D732239B8F200FAFE73 /* CustomCell.swift */,
+				F6FE61D0223A758000324B25 /* Main.storyboard */,
 				F66649BA2205B6260003D116 /* LaunchScreen.storyboard */,
 				F69E7E3A2236F86D004C4960 /* Assets.xcassets */,
 			);
@@ -144,9 +141,8 @@
 		F68933A0220C65EB00858BB1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F66CC08A222D401100714C72 /* WelcomeScreenVC.swift */,
-				F66CC08E222D402E00714C72 /* RegisterVC.swift */,
 				F66CC08C222D401E00714C72 /* LogInVC.swift */,
+				F66CC08E222D402E00714C72 /* RegisterVC.swift */,
 				F66CC094222D416100714C72 /* ChooseGameVC.swift */,
 				F66CC092222D410A00714C72 /* SelectMatchVC.swift */,
 				F66649B32205B6250003D116 /* SelectedGameVC.swift */,
@@ -158,11 +154,9 @@
 		F68933A1220C65F700858BB1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F6E20816222DADDF00E94941 /* PlayerDetails.swift */,
 				F6E20810222DAC7600E94941 /* ChosenGame.swift */,
 				F6E20812222DAC8700E94941 /* ScoreData.swift */,
 				F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */,
-				F6FF92142233E57500785745 /* DownloadScores.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,8 +164,8 @@
 		F6934586222D52EE008820B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6A0342B223AF9F30047215C /* GoogleService-Info.plist */,
 				F66649BD2205B6260003D116 /* Info.plist */,
-				F6934589222D540A008820B3 /* GoogleService-Info.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,9 +231,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F66649BC2205B6260003D116 /* LaunchScreen.storyboard in Resources */,
-				F693458A222D540B008820B3 /* GoogleService-Info.plist in Resources */,
+				F6A0342C223AF9F30047215C /* GoogleService-Info.plist in Resources */,
+				F6FE61D2223A758000324B25 /* Main.storyboard in Resources */,
 				F69E7E3B2236F86D004C4960 /* Assets.xcassets in Resources */,
-				F66649B72205B6250003D116 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,19 +307,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6FF92152233E57500785745 /* DownloadScores.swift in Sources */,
 				F6E20813222DAC8700E94941 /* ScoreData.swift in Sources */,
 				F6CF9B2F220CA81A00774FED /* PercentageCalc.swift in Sources */,
 				F66CC08F222D402E00714C72 /* RegisterVC.swift in Sources */,
 				F68933A7220C677C00858BB1 /* CustomButtonView.swift in Sources */,
 				F66649B42205B6250003D116 /* SelectedGameVC.swift in Sources */,
-				F6E20817222DADDF00E94941 /* PlayerDetails.swift in Sources */,
 				F66649B22205B6250003D116 /* AppDelegate.swift in Sources */,
 				F685A5AD222D6FD9000A294C /* Constants.swift in Sources */,
 				F66CC08D222D401E00714C72 /* LogInVC.swift in Sources */,
+				F64C3D742239B8F200FAFE73 /* CustomCell.swift in Sources */,
 				F6987E85220DF04F0062CBEE /* ParallaxEffect.swift in Sources */,
 				F66CC095222D416100714C72 /* ChooseGameVC.swift in Sources */,
-				F66CC08B222D401100714C72 /* WelcomeScreenVC.swift in Sources */,
 				F6E20811222DAC7600E94941 /* ChosenGame.swift in Sources */,
 				F66649C82205C3B90003D116 /* WhoWonVC.swift in Sources */,
 				F66CC093222D410A00714C72 /* SelectMatchVC.swift in Sources */,
@@ -336,20 +328,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F66649B52205B6250003D116 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F66649B62205B6250003D116 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F66649BA2205B6260003D116 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				F66649BB2205B6260003D116 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F6FE61D0223A758000324B25 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6FE61D1223A758000324B25 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -476,6 +468,7 @@
 			baseConfigurationReference = D321977FFA599A5A0C88608F /* Pods-ScoreTracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4G8276757U;
 				INFOPLIST_FILE = "$(SRCROOT)/ScoreTracker/Supporting Files/Info.plist";
@@ -485,6 +478,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LewisCrennell.ScoreTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -495,6 +489,7 @@
 			baseConfigurationReference = F93F831D4AE02B5279DB878C /* Pods-ScoreTracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4G8276757U;
 				INFOPLIST_FILE = "$(SRCROOT)/ScoreTracker/Supporting Files/Info.plist";
@@ -504,6 +499,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.LewisCrennell.ScoreTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -12,33 +12,33 @@ import SVProgressHUD
 
 class SelectMatchVC: UITableViewController {
     
-    //MARK:- Outlets, Constants & Variables
-    
     // Constants
-    let user = Auth.auth().currentUser?.email
+    let userID = Auth.auth().currentUser?.displayName
     
     // Variables
-    var nickNameRef: DocumentReference!
+    var username: String?
+    var usernameRef: DocumentReference!
     var selectedMatch: String?
     var opponents = [String]()
-//    var player: DocumentReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.title = selectedMatch
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableView.automaticDimension
         loadSavedOpponents()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        retrieveNickName()
-    }
-
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "matchesCell", for: indexPath)
-        cell.textLabel?.text = "\(nickName) vs \(opponents[indexPath.row])"
-        return cell
+        guard let user = userID else { return UITableViewCell() }
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "matchesCell", for: indexPath) as? CustomCell {
+            cell.configMatchesCell(username: user, opponentsName: opponents[indexPath.row])
+            return cell
+        } else {
+            return UITableViewCell()
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,14 +55,16 @@ class SelectMatchVC: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 destinationVC.opponentsName = opponents[indexPath.row]
                 destinationVC.selectedMatch = selectedMatch!
-                
+                destinationVC.username = userID
+                tableView.deselectRow(at: indexPath, animated: true)
             }
         }
     }
     
     //MARK:-  Load and save functions
     func loadSavedScores(selectedMatch: String, index: Int) {
-        let scoreReference = Firestore.firestore().collection(selectedMatch).document(user!).collection("opponents").document("\(opponents[index])")
+        guard let user = userID else { return }
+        let scoreReference = Firestore.firestore().collection(selectedMatch).document(user).collection(OPPONENTS).document("\(opponents[index])")
         SVProgressHUD.show()
         scoreReference.getDocument { (snapshot, error) in
             if let error = error {
@@ -87,47 +89,38 @@ class SelectMatchVC: UITableViewController {
     }
     
     func loadSavedOpponents() {
+        guard let user = userID,
+            let match = selectedMatch else { return }
         SVProgressHUD.show()
-        let opponentsRef = Firestore.firestore().collection(selectedMatch!).document(user!).collection(OPPONENTS)
+        let opponentsRef = Firestore.firestore().collection(match).document(user).collection(OPPONENTS)
         opponentsRef.getDocuments() { (snapshot, error) in
             if let err = error {
                 print("Error getting documents \(err)")
             } else {
-                for document in (snapshot?.documents)! {
-                    print("\(document.documentID)")
-                    self.opponents.append(document.documentID)
+                if let snap = snapshot?.documents {
+                    for document in snap {
+                        self.opponents.append(document.documentID)
+                    }
                 }
             }
             self.tableView.reloadData()
             SVProgressHUD.dismiss()
         }
     }
-
-    func retrieveNickName() {
-        nickNameRef = Firestore.firestore().collection(USER_DETAILS_REF).document(user!)
-        nickNameRef.getDocument { (snapshot, error) in
-            if let error = error {
-                debugPrint("Error fetching docs: \(error)")
-            } else {
-                if let data = snapshot?.data() {
-                    nickName = data[USER_NAME] as? String ?? "Anonymous"
-                    self.tableView.reloadData()
-                } else {
-                    print("Document does not exist")
-                }
-            }
-        }
-    }
     
     //MARK:- IBActions/Button Pressed
     @IBAction func addNewOpponent(_ sender: UIBarButtonItem) {
+        guard let user = userID,
+            let matchChosen = selectedMatch else { return }
         var textField = UITextField()
         let alert = UIAlertController(title: "Add New Opponent", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             let newOpponentsName = textField.text!
             self.opponents.append(newOpponentsName)
-            let player = Firestore.firestore().collection(self.selectedMatch!).document(self.user!).collection(OPPONENTS).document(newOpponentsName)
-            player.setData(["Exists" : true])
+            let player = Firestore.firestore().collection(matchChosen).document(user).collection(OPPONENTS).document(newOpponentsName)
+            player.setData([
+                "user" : "exists"
+                ])
             self.tableView.reloadData()
         }
         alert.addTextField { (alertTextField) in
