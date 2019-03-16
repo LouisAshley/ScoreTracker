@@ -31,6 +31,8 @@ class CustomCell: UITableViewCell {
     }
     
     
+    
+    
     func configGamesCell(gameType: String) {
         gameNameText.highlightedTextColor = UIColor.black
         let textOutline: [NSAttributedString.Key : Any] = [

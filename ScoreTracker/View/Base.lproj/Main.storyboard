@@ -243,9 +243,9 @@ Opponent</string>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="opponentImage" destination="iT7-7A-VSN" id="9Bf-qN-Tjg"/>
-                                    <outlet property="userImage" destination="jb9-70-Cwk" id="fJq-W6-efE"/>
-                                    <outlet property="versesText" destination="yX4-zd-oYE" id="nyh-fg-uij"/>
+                                    <outlet property="opponentImage" destination="iT7-7A-VSN" id="W3v-Ho-bai"/>
+                                    <outlet property="userImage" destination="jb9-70-Cwk" id="cFp-5f-oY5"/>
+                                    <outlet property="versesText" destination="yX4-zd-oYE" id="Ty8-hz-tks"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
