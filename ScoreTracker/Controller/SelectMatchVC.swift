@@ -18,13 +18,13 @@ class SelectMatchVC: UITableViewController {
     // Variables
     var username: String?
     var usernameRef: DocumentReference!
-    var selectedMatch: String?
+    var selectedGame: String?
     var opponents = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = false
-        navigationItem.title = selectedMatch
+        navigationItem.title = selectedGame
         tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
         loadSavedOpponents()
@@ -46,7 +46,15 @@ class SelectMatchVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        loadSavedScores(selectedMatch: selectedMatch!, index: indexPath.row)
+        loadSavedScores(selectedMatch: selectedGame!, index: indexPath.row)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            deleteOpponentsGame(index: indexPath.row)
+            opponents.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -54,7 +62,7 @@ class SelectMatchVC: UITableViewController {
             let destinationVC = segue.destination as! SelectedGameVC
             if let indexPath = tableView.indexPathForSelectedRow {
                 destinationVC.opponentsName = opponents[indexPath.row]
-                destinationVC.selectedMatch = selectedMatch!
+                destinationVC.selectedMatch = selectedGame!
                 destinationVC.username = userID
                 tableView.deselectRow(at: indexPath, animated: true)
             }
@@ -90,9 +98,9 @@ class SelectMatchVC: UITableViewController {
     
     func loadSavedOpponents() {
         guard let user = userID,
-            let match = selectedMatch else { return }
+            let game = selectedGame else { return }
         SVProgressHUD.show()
-        let opponentsRef = Firestore.firestore().collection(match).document(user).collection(OPPONENTS)
+        let opponentsRef = Firestore.firestore().collection(game).document(user).collection(OPPONENTS)
         opponentsRef.getDocuments() { (snapshot, error) in
             if let err = error {
                 print("Error getting documents \(err)")
@@ -108,10 +116,17 @@ class SelectMatchVC: UITableViewController {
         }
     }
     
+    func deleteOpponentsGame(index: Int) {
+        guard let user = userID,
+            let game = selectedGame else { return }
+        Firestore.firestore().collection(game).document(user).collection(OPPONENTS).document("\(opponents[index])").delete()
+        
+    }
+    
     //MARK:- IBActions/Button Pressed
     @IBAction func addNewOpponent(_ sender: UIBarButtonItem) {
         guard let user = userID,
-            let matchChosen = selectedMatch else { return }
+            let matchChosen = selectedGame else { return }
         var textField = UITextField()
         let alert = UIAlertController(title: "Add New Opponent", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { (action) in

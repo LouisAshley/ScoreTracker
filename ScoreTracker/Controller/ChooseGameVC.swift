@@ -56,7 +56,7 @@ class ChooseGameVC: UITableViewController {
         if segue.identifier == GO_TO_CHOOSE_GAME_VC {
         let destinationVC = segue.destination as! SelectMatchVC
         if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.selectedMatch = gameTypeArray[indexPath.row]
+            destinationVC.selectedGame = gameTypeArray[indexPath.row]
           }
         }
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8DF0D58CA099075AA6F3B13B /* Pods_ScoreTracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6EA189B22E0CCBAA4B3EF94 /* Pods_ScoreTracker.framework */; };
+		F6242BBC223D28FA0094C0F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6242BBB223D28FA0094C0F4 /* Assets.xcassets */; };
 		F64C3D742239B8F200FAFE73 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64C3D732239B8F200FAFE73 /* CustomCell.swift */; };
 		F66649B22205B6250003D116 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649B12205B6250003D116 /* AppDelegate.swift */; };
 		F66649B42205B6250003D116 /* SelectedGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66649B32205B6250003D116 /* SelectedGameVC.swift */; };
@@ -21,7 +22,6 @@
 		F68933A5220C672700858BB1 /* CustomLabelFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68933A4220C672700858BB1 /* CustomLabelFile.swift */; };
 		F68933A7220C677C00858BB1 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68933A6220C677C00858BB1 /* CustomButtonView.swift */; };
 		F6987E85220DF04F0062CBEE /* ParallaxEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */; };
-		F69E7E3B2236F86D004C4960 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F69E7E3A2236F86D004C4960 /* Assets.xcassets */; };
 		F6A0342C223AF9F30047215C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F6A0342B223AF9F30047215C /* GoogleService-Info.plist */; };
 		F6CF9B2F220CA81A00774FED /* PercentageCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */; };
 		F6E20811222DAC7600E94941 /* ChosenGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E20810222DAC7600E94941 /* ChosenGame.swift */; };
@@ -32,6 +32,7 @@
 /* Begin PBXFileReference section */
 		A6EA189B22E0CCBAA4B3EF94 /* Pods_ScoreTracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScoreTracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D321977FFA599A5A0C88608F /* Pods-ScoreTracker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScoreTracker.debug.xcconfig"; path = "Target Support Files/Pods-ScoreTracker/Pods-ScoreTracker.debug.xcconfig"; sourceTree = "<group>"; };
+		F6242BBB223D28FA0094C0F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F64C3D732239B8F200FAFE73 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		F66649AE2205B6250003D116 /* ScoreTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66649B12205B6250003D116 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		F68933A4220C672700858BB1 /* CustomLabelFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabelFile.swift; sourceTree = "<group>"; };
 		F68933A6220C677C00858BB1 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		F6987E84220DF04F0062CBEE /* ParallaxEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxEffect.swift; sourceTree = "<group>"; };
-		F69E7E3A2236F86D004C4960 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6A0342B223AF9F30047215C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6CF9B2E220CA81A00774FED /* PercentageCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageCalc.swift; sourceTree = "<group>"; };
 		F6E20810222DAC7600E94941 /* ChosenGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChosenGame.swift; sourceTree = "<group>"; };
@@ -133,7 +133,6 @@
 				F64C3D732239B8F200FAFE73 /* CustomCell.swift */,
 				F6FE61D0223A758000324B25 /* Main.storyboard */,
 				F66649BA2205B6260003D116 /* LaunchScreen.storyboard */,
-				F69E7E3A2236F86D004C4960 /* Assets.xcassets */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +163,7 @@
 		F6934586222D52EE008820B3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F6242BBB223D28FA0094C0F4 /* Assets.xcassets */,
 				F6A0342B223AF9F30047215C /* GoogleService-Info.plist */,
 				F66649BD2205B6260003D116 /* Info.plist */,
 			);
@@ -232,8 +232,8 @@
 			files = (
 				F66649BC2205B6260003D116 /* LaunchScreen.storyboard in Resources */,
 				F6A0342C223AF9F30047215C /* GoogleService-Info.plist in Resources */,
+				F6242BBC223D28FA0094C0F4 /* Assets.xcassets in Resources */,
 				F6FE61D2223A758000324B25 /* Main.storyboard in Resources */,
-				F69E7E3B2236F86D004C4960 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +254,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -268,6 +269,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
